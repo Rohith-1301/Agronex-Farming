@@ -76,8 +76,8 @@ export default function App() {
           onLoginSuccess={handleLoginSuccess}
         />
 
-        {/* Footer */}
-        <Footer onNavigate={setCurrentTab} />
+        {/* Footer (Rendered on internal operating modules) */}
+        {currentTab !== 'home' && <Footer onNavigate={setCurrentTab} />}
       </div>
     </FarmerProvider>
   );

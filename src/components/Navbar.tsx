@@ -99,6 +99,186 @@ export default function Navbar({
     { code: 'kn', label: 'Kannada', native: 'ಕನ್ನಡ' }
   ];
 
+  const activeLangObj = languages.find((l) => l.code === currentLang) || languages[0];
+
+  // If on public HomePage, render the clean, white/translucent rounded floating navbar matching the reference
+  if (currentTab === 'home') {
+    return (
+      <header className="sticky top-0 z-50 pt-3 px-3 sm:px-6 lg:px-8 bg-transparent">
+        <div className="max-w-7xl mx-auto rounded-full bg-white/90 backdrop-blur-xl border border-white/70 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.1)] px-4 sm:px-6 py-2.5 flex items-center justify-between">
+          {/* Left: Brand Logo & Tagline */}
+          <div
+            onClick={() => onSelectTab('home')}
+            className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group shrink-0"
+          >
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-50 border border-emerald-500/30 flex items-center justify-center p-1 shadow-sm group-hover:scale-105 transition">
+              <img
+                src="/agronex-logo.jpg"
+                alt="AGRONEX Logo"
+                className="w-full h-full object-contain"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            </div>
+            <div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-lg sm:text-xl font-black text-gray-900 tracking-tight font-sans">
+                  AGRONEX
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              </div>
+              <p className="text-[10px] text-gray-500 font-semibold tracking-wide hidden sm:block">
+                Smart Farming. Smarter Future.
+              </p>
+            </div>
+          </div>
+
+          {/* Center: Clean Rounded Navigation Items */}
+          <nav className="hidden md:flex items-center gap-1.5 lg:gap-2">
+            <button
+              onClick={() => onSelectTab('home')}
+              className="px-4 py-1.5 rounded-full bg-emerald-600 text-white font-bold text-xs shadow-md shadow-emerald-700/20 transition"
+            >
+              Home
+            </button>
+
+            <button
+              onClick={() => onSelectTab('dashboard')}
+              className="px-3.5 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50/80 font-bold text-xs transition"
+            >
+              Features
+            </button>
+
+            <button
+              onClick={() => {
+                alert('AGRONEX AI PRO is an intelligent precision agriculture ecosystem built for Indian farmers with ICAR & TNAU datasets, multi-field telemetry, and 20 government welfare schemes.');
+              }}
+              className="px-3.5 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50/80 font-bold text-xs transition"
+            >
+              About
+            </button>
+
+            <button
+              onClick={() => onSelectTab('schemes')}
+              className="px-3.5 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50/80 font-bold text-xs transition"
+            >
+              Schemes
+            </button>
+
+            <button
+              onClick={() => {
+                window.open('tel:18001801551');
+              }}
+              className="px-3.5 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50/80 font-bold text-xs transition"
+              title="Kisan Call Centre Toll-Free Helpline: 1800-180-1551"
+            >
+              Support
+            </button>
+          </nav>
+
+          {/* Right: Language Selector & Login Button */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Language Selector */}
+            <div className="relative">
+              <button
+                onClick={() => setLangMenuOpen(!langMenuOpen)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200/80 text-gray-800 text-xs font-bold transition border border-gray-200/60 shadow-xs"
+                title="Select Language"
+              >
+                <Globe className="w-3.5 h-3.5 text-emerald-600" />
+                <span>{activeLangObj.native}</span>
+                <ChevronDown className="w-3 h-3 text-gray-500" />
+              </button>
+
+              {langMenuOpen && (
+                <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-2xl shadow-xl p-2 z-50 space-y-1 animate-fadeIn">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        onSelectLang(lang.code);
+                        setLangMenuOpen(false);
+                      }}
+                      className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center justify-between transition ${
+                        currentLang === lang.code
+                          ? 'bg-emerald-600 text-white'
+                          : 'text-gray-700 hover:bg-emerald-50'
+                      }`}
+                    >
+                      <span>{lang.native}</span>
+                      <span className="text-[10px] text-gray-400">{lang.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Login Button */}
+            <button
+              onClick={onOpenLoginModal}
+              className="px-5 py-2 rounded-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold text-xs shadow-md shadow-emerald-700/20 transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5"
+            >
+              <User className="w-3.5 h-3.5" />
+              <span>{isLoggedIn ? (profile.name.split(' ')[0] || 'Profile') : 'Login'}</span>
+            </button>
+
+            {/* Mobile Hamburger */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded-full bg-gray-100 text-gray-700 hover:text-black"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-2 mx-auto max-w-7xl bg-white/95 backdrop-blur-xl border border-gray-200 rounded-3xl p-4 shadow-xl space-y-2 animate-fadeIn text-gray-800 text-xs font-bold">
+            <button
+              onClick={() => {
+                onSelectTab('home');
+                setMobileMenuOpen(false);
+              }}
+              className="w-full text-left px-4 py-2.5 rounded-xl bg-emerald-600 text-white font-bold"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => {
+                onSelectTab('dashboard');
+                setMobileMenuOpen(false);
+              }}
+              className="w-full text-left px-4 py-2.5 rounded-xl hover:bg-emerald-50 text-gray-800"
+            >
+              Features & Farm Dashboard
+            </button>
+            <button
+              onClick={() => {
+                onSelectTab('schemes');
+                setMobileMenuOpen(false);
+              }}
+              className="w-full text-left px-4 py-2.5 rounded-xl hover:bg-emerald-50 text-gray-800"
+            >
+              Government Schemes (20)
+            </button>
+            <button
+              onClick={() => {
+                window.open('tel:18001801551');
+                setMobileMenuOpen(false);
+              }}
+              className="w-full text-left px-4 py-2.5 rounded-xl hover:bg-emerald-50 text-gray-800 flex items-center justify-between"
+            >
+              <span>Kisan Support Helpline</span>
+              <span className="text-emerald-600">1800-180-1551</span>
+            </button>
+          </div>
+        )}
+      </header>
+    );
+  }
+
   return (
     <nav className="sticky top-0 z-50 bg-[#041008]/95 backdrop-blur-xl border-b border-emerald-900/60 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
