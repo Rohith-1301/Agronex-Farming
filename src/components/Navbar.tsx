@@ -104,8 +104,8 @@ export default function Navbar({
   // If on public HomePage, render the clean, white/translucent rounded floating navbar matching the reference
   if (currentTab === 'home') {
     return (
-      <header className="sticky top-0 z-50 pt-3 px-3 sm:px-6 lg:px-8 bg-transparent">
-        <div className="max-w-7xl mx-auto rounded-full bg-white/90 backdrop-blur-xl border border-white/70 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.1)] px-4 sm:px-6 py-2.5 flex items-center justify-between">
+      <header className="fixed top-0 left-0 right-0 z-50 pt-3 px-3 sm:px-6 lg:px-8 pointer-events-none">
+        <div className="max-w-7xl mx-auto rounded-full bg-white/85 backdrop-blur-xl border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.08)] px-4 sm:px-6 py-2 flex items-center justify-between pointer-events-auto">
           {/* Left: Brand Logo & Tagline */}
           <div
             onClick={() => onSelectTab('home')}
@@ -235,7 +235,7 @@ export default function Navbar({
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-2 mx-auto max-w-7xl bg-white/95 backdrop-blur-xl border border-gray-200 rounded-3xl p-4 shadow-xl space-y-2 animate-fadeIn text-gray-800 text-xs font-bold">
+          <div className="md:hidden mt-2 mx-auto max-w-7xl bg-white/95 backdrop-blur-xl border border-gray-200 rounded-3xl p-4 shadow-xl space-y-2 animate-fadeIn text-gray-800 text-xs font-bold pointer-events-auto">
             <button
               onClick={() => {
                 onSelectTab('home');

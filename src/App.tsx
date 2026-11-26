@@ -41,7 +41,11 @@ export default function App() {
 
   return (
     <FarmerProvider>
-      <div className="min-h-screen bg-[#041008] text-gray-100 flex flex-col justify-between selection:bg-emerald-500 selection:text-white font-sans">
+      <div
+        className={`min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white font-sans ${
+          currentTab === 'home' ? 'bg-[#e8f8ee] text-gray-900' : 'bg-[#041008] text-gray-100'
+        }`}
+      >
         {/* Top Sticky Navigation Bar */}
         <Navbar
           currentTab={currentTab}
