@@ -269,7 +269,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Evenly broadcast sprouted seeds onto muddy seedbed'
       ],
       pestDiseaseRisks: ['Bird damage to exposed sprouts', 'Seedling damping off in stagnant water'],
-      imageUrl: '/crops/paddy.jpg'
+      imageUrl: '/timeline/germination.jpg'
     },
     {
       stageNumber: 2,
@@ -286,7 +286,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Gently uproot 15-day old single seedlings for SRI planting'
       ],
       pestDiseaseRisks: ['Thrips scratching tender leaves', 'Caseworm cutting leaf tubes'],
-      imageUrl: '/crops/paddy.jpg'
+      imageUrl: '/timeline/seedling.jpg'
     },
     {
       stageNumber: 3,
@@ -393,7 +393,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Light earthing up to support tender pseudostem'
       ],
       pestDiseaseRisks: ['Rhizome rot from poor drainage', 'Nematodes infesting root tips'],
-      imageUrl: '/crops/banana.jpg'
+      imageUrl: '/timeline/germination.jpg'
     },
     {
       stageNumber: 2,
@@ -427,7 +427,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Cover developing bunch with perforated blue polypropylene sleeves'
       ],
       pestDiseaseRisks: ['Wind toppling of unpropped plants', 'Thrips scratching tender young fingers'],
-      imageUrl: '/crops/banana.jpg'
+      imageUrl: '/timeline/banana-flower.jpg'
     },
     {
       stageNumber: 4,
@@ -444,7 +444,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Cut bunch with 30cm stalk hook for safe transport without bruising'
       ],
       pestDiseaseRisks: ['Sunburn on exposed bunches', 'Crown rot fungus during humid spells'],
-      imageUrl: '/crops/banana.jpg'
+      imageUrl: '/timeline/banana-bunch.jpg'
     }
   ],
 
@@ -465,7 +465,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Cover with 2-3 cm fine soil'
       ],
       pestDiseaseRisks: ['Early Shoot Borer larvae boring into growing point (Dead hearts)'],
-      imageUrl: '/crops/sugarcane.jpg'
+      imageUrl: '/timeline/germination.jpg'
     },
     {
       stageNumber: 2,
@@ -482,7 +482,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Release Trichogramma egg parasitoids for borer control'
       ],
       pestDiseaseRisks: ['Internode borer', 'Whitefly on lower leaf surface'],
-      imageUrl: '/crops/sugarcane.jpg'
+      imageUrl: '/timeline/seedling.jpg'
     },
     {
       stageNumber: 3,
@@ -533,7 +533,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Seed treatment with Trichoderma viride (4g/kg) + Rhizobium culture.',
       keyFarmingActivities: ['Select bold, unsplit Kadiri 6 kernels', 'Sow at 4-5 cm depth with 30x10 cm spacing'],
       pestDiseaseRisks: ['Collar rot (Aspergillus niger)', 'Seed-rotting soil fungi'],
-      imageUrl: '/crops/groundnut.jpg'
+      imageUrl: '/timeline/seedling.jpg'
     },
     {
       stageNumber: 2,
@@ -546,7 +546,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Basal dose: 10 kg N + 20 kg P2O5 + 30 kg K2O + 5 kg Borax.',
       keyFarmingActivities: ['Gap filling at 10 DAS', 'First hand weeding at 15 DAS'],
       pestDiseaseRisks: ['Cutworms cutting tender stems', 'Thrips on young leaves'],
-      imageUrl: '/crops/groundnut.jpg'
+      imageUrl: '/timeline/germination.jpg'
     },
     {
       stageNumber: 3,
@@ -576,7 +576,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Incorporate gypsum into top 3 cm soil for Calcium supply'
       ],
       pestDiseaseRisks: ['Tikka leaf spot (Cercospora)', 'Red hairy caterpillar'],
-      imageUrl: '/crops/groundnut.jpg'
+      imageUrl: '/timeline/groundnut-flower.jpg'
     },
     {
       stageNumber: 5,
@@ -606,7 +606,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Strip pods and dry to <8% moisture to prevent aflatoxin'
       ],
       pestDiseaseRisks: ['Pre-harvest sprouting if unseasonal rain occurs', 'Aflatoxin in damp pods'],
-      imageUrl: '/crops/groundnut.jpg'
+      imageUrl: '/timeline/groundnut-pods.jpg'
     }
   ],
 
@@ -623,7 +623,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Basal: 10 tons FYM + 100% P2O5 + 25% K2O + Azospirillum.',
       keyFarmingActivities: ['Treat seed rhizomes with Carbendazim + Quinalphos', 'Mulch beds with green leaves (12 t/ha)'],
       pestDiseaseRisks: ['Rhizome scale', 'Early rhizome rot in poorly drained pockets'],
-      imageUrl: '/crops/turmeric.jpg'
+      imageUrl: '/timeline/seedling.jpg'
     },
     {
       stageNumber: 2,
@@ -636,7 +636,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Top dress 50% N + 25% K2O at 45 and 90 DAP.',
       keyFarmingActivities: ['Hand weeding and second green leaf mulching at 60 DAP', 'Earthing up soil around base'],
       pestDiseaseRisks: ['Shoot borer (Conogethes punctiferalis)', 'Leaf blotch (Taphrina)'],
-      imageUrl: '/crops/turmeric.jpg'
+      imageUrl: '/timeline/germination.jpg'
     },
     {
       stageNumber: 3,
@@ -679,7 +679,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Treat seeds with Azospirillum (600g/ha). Basal: 50% N + 100% P & K.',
       keyFarmingActivities: ['Line sow or transplant 18-day nursery seedlings at 30x10 cm'],
       pestDiseaseRisks: ['Bird picking', 'Seedling blight'],
-      imageUrl: '/crops/ragi.jpg'
+      imageUrl: '/timeline/seedling.jpg'
     },
     {
       stageNumber: 2,
@@ -692,7 +692,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Top dress remaining 50% Nitrogen at 25-30 DAS.',
       keyFarmingActivities: ['Intercultivation with hand hoe at 20 DAS', 'Thinning to maintain spacing'],
       pestDiseaseRisks: ['Pink stem borer', 'Aphids on young shoots'],
-      imageUrl: '/crops/ragi.jpg'
+      imageUrl: '/timeline/germination.jpg'
     },
     {
       stageNumber: 3,
@@ -735,7 +735,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Basal: 25% N + 100% P2O5 + 50% K2O + 10 kg ZnSO4/acre.',
       keyFarmingActivities: ['Ridge-and-furrow sowing (60x20 cm)', 'Pre-emergence Atrazine weed control'],
       pestDiseaseRisks: ['Fall Armyworm (FAW) whorl feeding', 'Shoot fly'],
-      imageUrl: '/crops/maize.jpg'
+      imageUrl: '/timeline/germination.jpg'
     },
     {
       stageNumber: 2,
@@ -761,7 +761,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Foliar 1% KNO3 if needed.',
       keyFarmingActivities: ['Ensure uninterrupted irrigation', 'Avoid foliar sprays during morning pollen shed'],
       pestDiseaseRisks: ['Cob borer', 'Pollen-washing storms'],
-      imageUrl: '/crops/maize.jpg'
+      imageUrl: '/timeline/maize-tassel.jpg'
     },
     {
       stageNumber: 4,
@@ -791,7 +791,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Basal: 25% N + 100% P2O5 + 50% K2O.',
       keyFarmingActivities: ['Dibbling at 90x60 cm', 'Gap filling & thinning at 15 DAS'],
       pestDiseaseRisks: ['Thrips & Jassids (leafhoppers)', 'Damping off'],
-      imageUrl: '/crops/cotton.jpg'
+      imageUrl: '/timeline/germination.jpg'
     },
     {
       stageNumber: 2,
@@ -804,7 +804,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Top dress 50% N at 35 DAS + Magnesium Sulphate spray if leaf reddening occurs.',
       keyFarmingActivities: ['Intercultivation and earthing up', 'Install yellow sticky traps for whitefly'],
       pestDiseaseRisks: ['Whitefly', 'Aphids', 'Square shedding'],
-      imageUrl: '/crops/cotton.jpg'
+      imageUrl: '/timeline/seedling.jpg'
     },
     {
       stageNumber: 3,
@@ -817,7 +817,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Final 25% N + 50% K2O at 65 DAS + 2% DAP foliar spray.',
       keyFarmingActivities: ['Nipping terminal bud at 85 DAS', 'Monitor pheromone traps for Pink Bollworm'],
       pestDiseaseRisks: ['Pink Bollworm', 'American Bollworm', 'Grey mildew'],
-      imageUrl: '/crops/cotton.jpg'
+      imageUrl: '/timeline/cotton-flower.jpg'
     },
     {
       stageNumber: 4,

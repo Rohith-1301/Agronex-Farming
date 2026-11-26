@@ -194,9 +194,9 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
       {/* Atmospheric Lush Green Farmland Backdrop */}
       <div
         className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-        style={{ backgroundImage: "url('/crops/paddy.jpg')" }}
+        style={{ backgroundImage: "url('/dashboard-bg.jpg')" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#041b0e]/82 via-[#062111]/72 to-[#031108]/95 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#03140a]/72 via-[#051d0e]/68 to-[#020d06]/92" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
@@ -231,7 +231,7 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
       {/* 2. Farmer Profile Card & Key Farm Telemetry Bento */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Farmer Profile Card (5 cols) */}
-        <div className="lg:col-span-5 bg-[#062413]/72 backdrop-blur-xl border border-emerald-400/30 rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.45)] relative overflow-hidden flex flex-col justify-between space-y-6">
+        <div className="lg:col-span-5 bg-[#041b0d]/86 backdrop-blur-xl border border-emerald-400/30 rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.55)] relative overflow-hidden flex flex-col justify-between space-y-6">
           <div className="space-y-4">
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-4">
@@ -321,7 +321,7 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
         {/* 4 Summary Telemetry Cards (7 cols) */}
         <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-4">
           {/* Card 1: Total Holding */}
-          <div className="bg-[#062413]/70 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col justify-between shadow-xl hover:border-emerald-400/50 transition">
+          <div className="bg-[#041b0d]/85 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col justify-between shadow-xl hover:border-emerald-400/50 transition">
             <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 mb-2">
               <Layers className="w-5 h-5" />
             </div>
@@ -339,7 +339,7 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Card 2: Active Fields */}
-          <div className="bg-[#062413]/70 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col justify-between shadow-xl hover:border-emerald-400/50 transition">
+          <div className="bg-[#041b0d]/85 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col justify-between shadow-xl hover:border-emerald-400/50 transition">
             <div className="w-10 h-10 rounded-2xl bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-300 mb-2">
               <Sprout className="w-5 h-5" />
             </div>
@@ -357,7 +357,7 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Card 3: Pending Reminders */}
-          <div className="bg-[#062413]/70 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col justify-between shadow-xl hover:border-emerald-400/50 transition">
+          <div className="bg-[#041b0d]/85 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col justify-between shadow-xl hover:border-emerald-400/50 transition">
             <div className="w-10 h-10 rounded-2xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-300 mb-2">
               <AlertCircle className="w-5 h-5" />
             </div>
@@ -375,7 +375,7 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Card 4: Estimated Farm Income */}
-          <div className="bg-[#062413]/70 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col justify-between shadow-xl hover:border-emerald-400/50 transition">
+          <div className="bg-[#041b0d]/85 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col justify-between shadow-xl hover:border-emerald-400/50 transition">
             <div className="w-10 h-10 rounded-2xl bg-lime-500/20 border border-lime-400/30 flex items-center justify-center text-lime-300 mb-2">
               <TrendingUp className="w-5 h-5" />
             </div>
@@ -393,7 +393,7 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Live Weather Widget for Thanjavur District (spans across 4 cols) */}
-          <div className="col-span-2 sm:col-span-4 bg-[#062413]/72 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
+          <div className="col-span-2 sm:col-span-4 bg-[#041b0d]/85 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
             <div className="flex items-center gap-3.5">
               <div className="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
                 <CloudSun className="w-6 h-6 animate-pulse" />
