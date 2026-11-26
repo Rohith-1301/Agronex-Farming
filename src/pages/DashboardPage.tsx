@@ -196,23 +196,23 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
         className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none"
         style={{ backgroundImage: "url('/dashboard-bg.jpg')" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#03140a]/72 via-[#051d0e]/68 to-[#020d06]/92" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#021208]/92 via-[#04190c]/80 to-[#020d06]/95" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
         {/* 1. Header & Module Badge */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-emerald-500/25 pb-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-emerald-500/30 pb-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold tracking-wide uppercase mb-2">
-            <span className="w-4 h-4 rounded-full bg-emerald-500 text-black flex items-center justify-center font-mono text-[10px]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-950/90 border border-emerald-400/40 text-emerald-300 text-xs font-bold tracking-wide uppercase mb-2 shadow-md">
+            <span className="w-4 h-4 rounded-full bg-emerald-400 text-black flex items-center justify-center font-mono text-[10px]">
               1
             </span>
             <span>Module 1 • Farmer Profile & Smart Farm Dashboard</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight drop-shadow-md">
             Smart Farm Command Dashboard
           </h1>
-          <p className="text-sm sm:text-base text-gray-300 mt-1 max-w-2xl">
+          <p className="text-sm sm:text-base text-emerald-100/90 mt-1 max-w-2xl drop-shadow-sm">
             Live telemetry, individual multi-field agronomic records, growth tracking, and automated reminders for your agricultural land.
           </p>
         </div>
@@ -262,40 +262,40 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
 
             {/* Profile Meta Info */}
             <div className="grid grid-cols-2 gap-3 text-xs pt-2">
-              <div className="bg-white/5 rounded-2xl p-3 border border-white/5">
-                <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wider flex items-center gap-1.5 mb-1">
+              <div className="bg-[#03150b]/85 rounded-2xl p-3 border border-emerald-400/20">
+                <div className="text-[10px] text-emerald-300 font-bold uppercase tracking-wider flex items-center gap-1.5 mb-1">
                   <MapPin className="w-3 h-3 text-emerald-400" />
                   <span>Location</span>
                 </div>
                 <div className="text-white font-bold">{profile.village}</div>
-                <div className="text-gray-400 text-[11px]">{profile.district}, {profile.state}</div>
+                <div className="text-emerald-100/80 text-[11px]">{profile.district}, {profile.state}</div>
               </div>
 
-              <div className="bg-white/5 rounded-2xl p-3 border border-white/5">
-                <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wider flex items-center gap-1.5 mb-1">
+              <div className="bg-[#03150b]/85 rounded-2xl p-3 border border-emerald-400/20">
+                <div className="text-[10px] text-emerald-300 font-bold uppercase tracking-wider flex items-center gap-1.5 mb-1">
                   <Award className="w-3 h-3 text-emerald-400" />
                   <span>Experience</span>
                 </div>
                 <div className="text-white font-bold">{profile.farmingExperienceYears} Years</div>
-                <div className="text-gray-400 text-[11px]">Progressive Cultivator</div>
+                <div className="text-emerald-100/80 text-[11px]">Progressive Cultivator</div>
               </div>
 
-              <div className="bg-white/5 rounded-2xl p-3 border border-white/5">
-                <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wider flex items-center gap-1.5 mb-1">
+              <div className="bg-[#03150b]/85 rounded-2xl p-3 border border-emerald-400/20">
+                <div className="text-[10px] text-emerald-300 font-bold uppercase tracking-wider flex items-center gap-1.5 mb-1">
                   <Phone className="w-3 h-3 text-emerald-400" />
                   <span>Contact</span>
                 </div>
                 <div className="text-white font-bold">{profile.phone}</div>
-                <div className="text-gray-400 text-[11px]">Aadhaar: {profile.aadhaarMasked}</div>
+                <div className="text-emerald-100/80 text-[11px]">Aadhaar: {profile.aadhaarMasked}</div>
               </div>
 
-              <div className="bg-white/5 rounded-2xl p-3 border border-white/5">
-                <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wider flex items-center gap-1.5 mb-1">
+              <div className="bg-[#03150b]/85 rounded-2xl p-3 border border-emerald-400/20">
+                <div className="text-[10px] text-emerald-300 font-bold uppercase tracking-wider flex items-center gap-1.5 mb-1">
                   <Layers className="w-3 h-3 text-emerald-400" />
                   <span>Total Holding</span>
                 </div>
                 <div className="text-white font-bold">{profile.totalLandAreaAcres} Acres</div>
-                <div className="text-gray-400 text-[11px]">{fields.length} Active Fields</div>
+                <div className="text-emerald-100/80 text-[11px]">{fields.length} Active Fields</div>
               </div>
             </div>
 

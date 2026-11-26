@@ -269,7 +269,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Evenly broadcast sprouted seeds onto muddy seedbed'
       ],
       pestDiseaseRisks: ['Bird damage to exposed sprouts', 'Seedling damping off in stagnant water'],
-      imageUrl: '/timeline/germination.jpg'
+      imageUrl: '/timeline/seedling.jpg'
     },
     {
       stageNumber: 2,
@@ -286,7 +286,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Gently uproot 15-day old single seedlings for SRI planting'
       ],
       pestDiseaseRisks: ['Thrips scratching tender leaves', 'Caseworm cutting leaf tubes'],
-      imageUrl: '/timeline/seedling.jpg'
+      imageUrl: '/dashboard-bg.jpg'
     },
     {
       stageNumber: 3,
@@ -303,7 +303,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Check for yellowing indicating zinc deficiency'
       ],
       pestDiseaseRisks: ['Stem Borer dead hearts', 'Leaf Folder folding leaf blades', 'Brown Spot'],
-      imageUrl: '/crops/paddy.jpg'
+      imageUrl: '/paddy-macro.jpg'
     },
     {
       stageNumber: 4,
@@ -320,7 +320,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Erect 10 bird perches per acre for natural pest control'
       ],
       pestDiseaseRisks: ['BPH multiplying at water level', 'Bacterial Leaf Blight on leaf margins'],
-      imageUrl: '/paddy-golden-panicle.jpg'
+      imageUrl: '/crops/paddy.jpg'
     },
     {
       stageNumber: 5,
@@ -337,7 +337,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Install yellow sticky traps'
       ],
       pestDiseaseRisks: ['Neck Blast cutting panicle neck', 'False Smut spores', 'Gundhi Bug sucking milky sap'],
-      imageUrl: '/paddy-golden-panicle.jpg'
+      imageUrl: '/timeline/paddy-seeds.jpg'
     },
     {
       stageNumber: 6,
@@ -393,7 +393,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Light earthing up to support tender pseudostem'
       ],
       pestDiseaseRisks: ['Rhizome rot from poor drainage', 'Nematodes infesting root tips'],
-      imageUrl: '/timeline/germination.jpg'
+      imageUrl: '/timeline/banana-young.jpg'
     },
     {
       stageNumber: 2,
@@ -465,7 +465,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Cover with 2-3 cm fine soil'
       ],
       pestDiseaseRisks: ['Early Shoot Borer larvae boring into growing point (Dead hearts)'],
-      imageUrl: '/timeline/germination.jpg'
+      imageUrl: '/timeline/seedling.jpg'
     },
     {
       stageNumber: 2,
@@ -482,7 +482,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Release Trichogramma egg parasitoids for borer control'
       ],
       pestDiseaseRisks: ['Internode borer', 'Whitefly on lower leaf surface'],
-      imageUrl: '/timeline/seedling.jpg'
+      imageUrl: '/timeline/germination.jpg'
     },
     {
       stageNumber: 3,
@@ -499,7 +499,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Wrap and tie canes together (propping) to prevent lodging during wind'
       ],
       pestDiseaseRisks: ['Red rot fungus', 'Woolly aphid infestation on cane foliage'],
-      imageUrl: '/crops/sugarcane.jpg'
+      imageUrl: '/timeline/maize-young.jpg'
     },
     {
       stageNumber: 4,
@@ -559,7 +559,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Foliar micronutrient spray (ZnSO4 0.5% + FeSO4 0.5%) if chlorosis appears.',
       keyFarmingActivities: ['Second hand weeding before flowering', 'Install pheromone traps for Spodoptera'],
       pestDiseaseRisks: ['Leaf miner caterpillars', 'Early Tikka leaf spots'],
-      imageUrl: '/crops/groundnut.jpg'
+      imageUrl: '/timeline/groundnut-plant.jpg'
     },
     {
       stageNumber: 4,
@@ -649,7 +649,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Apply remaining Nitrogen + Potash + Micronutrients (Zn, Fe, B) at 120 DAP.',
       keyFarmingActivities: ['Final earthing up to cover exposed young rhizomes', 'Check for rhizome rot wilting'],
       pestDiseaseRisks: ['Pythium rhizome rot', 'Leaf spot (Colletotrichum)'],
-      imageUrl: '/crops/turmeric.jpg'
+      imageUrl: '/timeline/turmeric-plant.jpg'
     },
     {
       stageNumber: 4,
@@ -679,7 +679,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Treat seeds with Azospirillum (600g/ha). Basal: 50% N + 100% P & K.',
       keyFarmingActivities: ['Line sow or transplant 18-day nursery seedlings at 30x10 cm'],
       pestDiseaseRisks: ['Bird picking', 'Seedling blight'],
-      imageUrl: '/timeline/seedling.jpg'
+      imageUrl: '/timeline/germination.jpg'
     },
     {
       stageNumber: 2,
@@ -692,7 +692,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Top dress remaining 50% Nitrogen at 25-30 DAS.',
       keyFarmingActivities: ['Intercultivation with hand hoe at 20 DAS', 'Thinning to maintain spacing'],
       pestDiseaseRisks: ['Pink stem borer', 'Aphids on young shoots'],
-      imageUrl: '/timeline/germination.jpg'
+      imageUrl: '/paddy-macro.jpg'
     },
     {
       stageNumber: 3,
@@ -718,7 +718,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Nil.',
       keyFarmingActivities: ['Harvest mature earheads in 2 pickings', 'Sun dry, thresh, and winnow'],
       pestDiseaseRisks: ['Bird damage on ripening earheads'],
-      imageUrl: '/crops/ragi.jpg'
+      imageUrl: '/timeline/ragi-seeds.jpg'
     }
   ],
 
@@ -735,7 +735,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Basal: 25% N + 100% P2O5 + 50% K2O + 10 kg ZnSO4/acre.',
       keyFarmingActivities: ['Ridge-and-furrow sowing (60x20 cm)', 'Pre-emergence Atrazine weed control'],
       pestDiseaseRisks: ['Fall Armyworm (FAW) whorl feeding', 'Shoot fly'],
-      imageUrl: '/timeline/germination.jpg'
+      imageUrl: '/timeline/seedling.jpg'
     },
     {
       stageNumber: 2,
@@ -748,7 +748,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Top dress 50% N at 25 DAS and remaining 25% N + 50% K2O at 45 DAS.',
       keyFarmingActivities: ['Earthing up at 30 DAS', 'Monitor whorl for Fall Armyworm frass'],
       pestDiseaseRisks: ['Fall Armyworm', 'Turcicum leaf blight'],
-      imageUrl: '/crops/maize.jpg'
+      imageUrl: '/timeline/maize-young.jpg'
     },
     {
       stageNumber: 3,
@@ -804,7 +804,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
       nutrientRequirements: 'Top dress 50% N at 35 DAS + Magnesium Sulphate spray if leaf reddening occurs.',
       keyFarmingActivities: ['Intercultivation and earthing up', 'Install yellow sticky traps for whitefly'],
       pestDiseaseRisks: ['Whitefly', 'Aphids', 'Square shedding'],
-      imageUrl: '/timeline/seedling.jpg'
+      imageUrl: '/timeline/groundnut-plant.jpg'
     },
     {
       stageNumber: 3,
