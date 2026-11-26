@@ -1,0 +1,21 @@
+1M1B GREEN INTERNSHIP (YIRP) — PROJECT OVERVIEW,,,
+,,,
+Intern Name,Rohith,Project Title,AGRI VISION 3D — Next-Gen Smart Agriculture
+Domain,Agriculture & Environment (Priority 1),Target Group,Small & Marginal Indian Farmers (Tamil Nadu focus)
+Mentorship Lead,paramjeet@onemoneb.org,SDG Alignment,"SDG 2 (Zero Hunger), SDG 6 (Clean Water), SDG 12 (Climate Action)"
+Prototype Status,Completed (Ready for Review),Key Tech,"React, Three.js 3D WebGL, AI Vision, Voice AI, Weather API"
+,,,
+PART 1: PROBLEM DEFINITION (Challenges Faced by Indian Farmers),,,
+S.No,Problem Area,Detailed Problem Definition,Real-World Impact / Severity
+1,Severe Freshwater Wastage in Irrigation,Traditional flood irrigation wastes 30% to 40% of fresh groundwater due to evaporation and uncontrolled field flooding because farmers lack visual root-zone moisture data.,Groundwater depletion across agricultural basins; higher pumping electricity costs.
+2,Delayed Crop Disease Diagnosis,"Crop diseases (Paddy Blast, Tomato Blight, Root Wilt) are diagnosed after visible damage spreads. Farmers rely on indiscriminate chemical sprays that degrade soil and enter food supply.",Annual crop losses of 20-30%; toxic chemical runoff into freshwater streams; high pesticide debt.
+3,Financial Exploitation by Middlemen,"Farmers lack direct access to wholesale buyers and live APMC mandi pricing, forcing them to sell through multiple commission agents at low prices.",Farmers receive 20% to 35% below fair market value; economic distress in farming households.
+4,Digital Literacy & Language Barriers,"Existing smart agriculture apps are in English, cluttered with complex text and forms, and require typing, making them inaccessible to rural farmers.",High barrier to technological adoption; smallholder farmers are left behind in the digital transition.
+,,,
+PART 2: PROJECT IDEATION & SOLUTION (How AGRI VISION 3D Solves It),,,
+S.No,Solution Pillar,Project Ideation & Technical Implementation,Environmental & Farmer Benefit
+1,3D Digital Twin Farm & Soil Stratum,"Interactive Three.js 3D representation of farmer plots showing topsoil, root depth, and 5 dynamic layers: Crop growth, Soil moisture, Irrigation lines, Health index, and Soil type.",Visual clarity for farmers without complex graphs; precise plot monitoring.
+2,AI Crop Doctor (Organic-First),"Mobile camera leaf photo diagnosis using AI agronomy. Suggests TNAU-verified organic remedies (Panchagavya, Pseudomonas fluorescens) before chemical IPM.",Restores soil microbiome; eliminates toxic chemical runoff; cuts pesticide costs by 40%.
+3,Smart Precision Irrigation Management,Converts crop evapotranspiration (mm/day) and root-zone sensor moisture into exact daily liter requirements with scheduled drip runtimes.,Conserves up to 30-40% irrigation water; prevents root rot and fertilizer leaching.
+4,Direct Farmer-to-Buyer Marketplace,"Commission-free marketplace with live Tamil Nadu APMC Mandi price tickers, allowing farmers to post harvest listings and connect directly with verified buyers via Call / WhatsApp.",Eliminates middlemen cuts; increases farmer net profit by 20-30%.
+5,Tamil-First Voice Accessibility,Native Tamil interface with built-in voice navigation and text-to-speech audio explanations so illiterate farmers can speak queries and listen to guidance.,Ensures 100% inclusivity for rural farmers across varying literacy levels.
