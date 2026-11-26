@@ -190,9 +190,18 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
   const activeReminders = notifications.filter((n) => n.status === 'active');
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
-      {/* 1. Header & Module Badge */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-emerald-900/50 pb-6">
+    <div className="relative min-h-screen">
+      {/* Atmospheric Lush Green Farmland Backdrop */}
+      <div
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+        style={{ backgroundImage: "url('/crops/paddy.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-[#041b0e]/82 via-[#062111]/72 to-[#031108]/95 backdrop-blur-[2px]" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+        {/* 1. Header & Module Badge */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-emerald-500/25 pb-6">
         <div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold tracking-wide uppercase mb-2">
             <span className="w-4 h-4 rounded-full bg-emerald-500 text-black flex items-center justify-center font-mono text-[10px]">
@@ -222,7 +231,7 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
       {/* 2. Farmer Profile Card & Key Farm Telemetry Bento */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Farmer Profile Card (5 cols) */}
-        <div className="lg:col-span-5 bg-gradient-to-br from-[#072213] via-[#05170d] to-[#020b06] border border-emerald-500/40 rounded-3xl p-6 shadow-2xl relative overflow-hidden flex flex-col justify-between space-y-6">
+        <div className="lg:col-span-5 bg-[#062413]/72 backdrop-blur-xl border border-emerald-400/30 rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.45)] relative overflow-hidden flex flex-col justify-between space-y-6">
           <div className="space-y-4">
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-4">
@@ -312,16 +321,16 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
         {/* 4 Summary Telemetry Cards (7 cols) */}
         <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-4">
           {/* Card 1: Total Holding */}
-          <div className="bg-[#06180e] border border-emerald-900/60 rounded-3xl p-5 flex flex-col justify-between shadow-xl">
-            <div className="w-10 h-10 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-2">
+          <div className="bg-[#062413]/70 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col justify-between shadow-xl hover:border-emerald-400/50 transition">
+            <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 mb-2">
               <Layers className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+              <div className="text-[11px] font-bold text-emerald-100/70 uppercase tracking-wider">
                 Total Land
               </div>
               <div className="text-2xl sm:text-3xl font-black text-white mt-1">
-                {profile.totalLandAreaAcres} <span className="text-xs text-gray-400 font-normal">Acres</span>
+                {profile.totalLandAreaAcres} <span className="text-xs text-emerald-200/70 font-normal">Acres</span>
               </div>
               <p className="text-[11px] text-emerald-400 font-medium mt-1">
                 {(profile.totalLandAreaAcres * 0.404686).toFixed(2)} Hectares
@@ -330,16 +339,16 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Card 2: Active Fields */}
-          <div className="bg-[#06180e] border border-emerald-900/60 rounded-3xl p-5 flex flex-col justify-between shadow-xl">
-            <div className="w-10 h-10 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-2">
+          <div className="bg-[#062413]/70 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col justify-between shadow-xl hover:border-emerald-400/50 transition">
+            <div className="w-10 h-10 rounded-2xl bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-300 mb-2">
               <Sprout className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+              <div className="text-[11px] font-bold text-emerald-100/70 uppercase tracking-wider">
                 Active Fields
               </div>
               <div className="text-2xl sm:text-3xl font-black text-white mt-1">
-                {fields.length} <span className="text-xs text-gray-400 font-normal">Plots</span>
+                {fields.length} <span className="text-xs text-emerald-200/70 font-normal">Plots</span>
               </div>
               <p className="text-[11px] text-cyan-400 font-medium mt-1">
                 100% Cultivated
@@ -348,16 +357,16 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Card 3: Pending Reminders */}
-          <div className="bg-[#06180e] border border-emerald-900/60 rounded-3xl p-5 flex flex-col justify-between shadow-xl">
-            <div className="w-10 h-10 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-2">
+          <div className="bg-[#062413]/70 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col justify-between shadow-xl hover:border-emerald-400/50 transition">
+            <div className="w-10 h-10 rounded-2xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-300 mb-2">
               <AlertCircle className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+              <div className="text-[11px] font-bold text-emerald-100/70 uppercase tracking-wider">
                 Farm Alerts
               </div>
               <div className="text-2xl sm:text-3xl font-black text-white mt-1">
-                {activeReminders.length} <span className="text-xs text-gray-400 font-normal">Tasks</span>
+                {activeReminders.length} <span className="text-xs text-emerald-200/70 font-normal">Tasks</span>
               </div>
               <p className="text-[11px] text-amber-400 font-medium mt-1">
                 Needs attention
@@ -366,25 +375,25 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Card 4: Estimated Farm Income */}
-          <div className="bg-[#06180e] border border-emerald-900/60 rounded-3xl p-5 flex flex-col justify-between shadow-xl">
-            <div className="w-10 h-10 rounded-2xl bg-lime-500/15 border border-lime-500/30 flex items-center justify-center text-lime-400 mb-2">
+          <div className="bg-[#062413]/70 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col justify-between shadow-xl hover:border-emerald-400/50 transition">
+            <div className="w-10 h-10 rounded-2xl bg-lime-500/20 border border-lime-400/30 flex items-center justify-center text-lime-300 mb-2">
               <TrendingUp className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+              <div className="text-[11px] font-bold text-emerald-100/70 uppercase tracking-wider">
                 Est. Farm Income
               </div>
               <div className="text-2xl sm:text-3xl font-black text-white mt-1">
                 ₹{(totalRevenue / 100000).toFixed(1)}L
               </div>
               <p className="text-[11px] text-lime-400 font-medium mt-1">
-                Across 4 Fields
+                Across {fields.length} Fields
               </p>
             </div>
           </div>
 
           {/* Live Weather Widget for Thanjavur District (spans across 4 cols) */}
-          <div className="col-span-2 sm:col-span-4 bg-gradient-to-r from-[#061e12] via-[#04140b] to-[#020b06] border border-emerald-800/60 rounded-3xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
+          <div className="col-span-2 sm:col-span-4 bg-[#062413]/72 backdrop-blur-xl border border-emerald-400/25 rounded-3xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
             <div className="flex items-center gap-3.5">
               <div className="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
                 <CloudSun className="w-6 h-6 animate-pulse" />
@@ -1059,6 +1068,7 @@ export default function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }

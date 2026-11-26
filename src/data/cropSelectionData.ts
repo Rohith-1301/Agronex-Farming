@@ -286,7 +286,7 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
         'Gently uproot 15-day old single seedlings for SRI planting'
       ],
       pestDiseaseRisks: ['Thrips scratching tender leaves', 'Caseworm cutting leaf tubes'],
-      imageUrl: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80'
+      imageUrl: '/crops/paddy.jpg'
     },
     {
       stageNumber: 3,
@@ -524,50 +524,313 @@ export const cropGrowthTimelines: Record<string, CropGrowthStageDetail[]> = {
   'Groundnut': [
     {
       stageNumber: 1,
-      stageName: 'Emergence & Seedling',
-      dayRange: 'Day 1 – 20',
+      stageName: 'Seed & Germination',
+      dayRange: 'Day 1 – 7',
       startDay: 1,
-      endDay: 20,
-      description: 'Seeds germinate in 4-6 days. Tetrafoliate leaves emerge, taproot elongates down to 30 cm. Nodule formation begins on roots.',
-      waterRequirements: 'Moist seedbed; one light irrigation if rainfall is absent.',
-      nutrientRequirements: 'Basal dose: 10 kg N + 20 kg P2O5 + 30 kg K2O + 5 kg Borax.',
-      keyFarmingActivities: ['Treated seed sowing with 30x10 cm spacing', 'Hand weeding at 15 DAS'],
-      pestDiseaseRisks: ['Collar rot fungus', 'Cutworms cutting tender seedlings'],
-      imageUrl: 'https://images.unsplash.com/photo-1568283096533-078a24930eb8?w=800&auto=format&fit=crop&q=80'
+      endDay: 7,
+      description: 'Bold kernels imbibe soil moisture; radicle emerges within 48 hours followed by hypocotyl arch pushing cotyledons toward surface.',
+      waterRequirements: 'Light pre-sowing irrigation to ensure uniform germination.',
+      nutrientRequirements: 'Seed treatment with Trichoderma viride (4g/kg) + Rhizobium culture.',
+      keyFarmingActivities: ['Select bold, unsplit Kadiri 6 kernels', 'Sow at 4-5 cm depth with 30x10 cm spacing'],
+      pestDiseaseRisks: ['Collar rot (Aspergillus niger)', 'Seed-rotting soil fungi'],
+      imageUrl: '/crops/groundnut.jpg'
     },
     {
       stageNumber: 2,
-      stageName: 'Flowering & Pegging',
-      dayRange: 'Day 21 – 50',
+      stageName: 'Emergence & Seedling',
+      dayRange: 'Day 8 – 20',
+      startDay: 8,
+      endDay: 20,
+      description: 'Tetrafoliate leaves unfold cleanly, taproot penetrates down to 30 cm, and pink Rhizobium root nodules begin nitrogen fixation.',
+      waterRequirements: 'Moist seedbed; one light life-saving irrigation at 12 DAS if dry.',
+      nutrientRequirements: 'Basal dose: 10 kg N + 20 kg P2O5 + 30 kg K2O + 5 kg Borax.',
+      keyFarmingActivities: ['Gap filling at 10 DAS', 'First hand weeding at 15 DAS'],
+      pestDiseaseRisks: ['Cutworms cutting tender stems', 'Thrips on young leaves'],
+      imageUrl: '/crops/groundnut.jpg'
+    },
+    {
+      stageNumber: 3,
+      stageName: 'Vegetative Branching',
+      dayRange: 'Day 21 – 32',
       startDay: 21,
-      endDay: 50,
-      description: 'Bright yellow flowers emerge in leaf axils. After self-pollination, the ovary elongates into a geotropical peg that grows down and penetrates into the soil.',
-      waterRequirements: 'CRITICAL STAGE: Adequate soil moisture required for soft soil crust so pegs penetrate easily.',
+      endDay: 32,
+      description: 'Lateral branches spread across the row forming a dense green canopy. Root nodulation reaches peak biological nitrogen fixation.',
+      waterRequirements: 'Moderate irrigation at 8-10 day intervals.',
+      nutrientRequirements: 'Foliar micronutrient spray (ZnSO4 0.5% + FeSO4 0.5%) if chlorosis appears.',
+      keyFarmingActivities: ['Second hand weeding before flowering', 'Install pheromone traps for Spodoptera'],
+      pestDiseaseRisks: ['Leaf miner caterpillars', 'Early Tikka leaf spots'],
+      imageUrl: '/crops/groundnut.jpg'
+    },
+    {
+      stageNumber: 4,
+      stageName: 'Flowering & Pegging',
+      dayRange: 'Day 33 – 55',
+      startDay: 33,
+      endDay: 55,
+      description: 'Bright yellow papilionaceous flowers bloom near the base. After self-pollination, geotropic gynophores (pegs) elongate downward into the soil.',
+      waterRequirements: 'CRITICAL STAGE: Keep top soil soft and moist so pegs penetrate effortlessly.',
       nutrientRequirements: 'Apply 160 kg Gypsum per acre at 40-45 DAS around plant base.',
       keyFarmingActivities: [
         'Earthing up carefully around pegging zone',
         'Stop all intercultivation once pegs enter soil',
-        'Incorporate gypsum into top 3 cm soil'
+        'Incorporate gypsum into top 3 cm soil for Calcium supply'
       ],
-      pestDiseaseRisks: ['Tikka leaf spot', 'Leaf miner caterpillars'],
-      imageUrl: 'https://images.unsplash.com/photo-1568283096533-078a24930eb8?w=800&auto=format&fit=crop&q=80'
+      pestDiseaseRisks: ['Tikka leaf spot (Cercospora)', 'Red hairy caterpillar'],
+      imageUrl: '/crops/groundnut.jpg'
+    },
+    {
+      stageNumber: 5,
+      stageName: 'Pod Formation & Bulking',
+      dayRange: 'Day 56 – 85',
+      startDay: 56,
+      endDay: 85,
+      description: 'Subterranean peg tips swell horizontally into two-seeded pods. Kernels rapidly accumulate lipids, oil, and storage proteins.',
+      waterRequirements: 'Steady sprinkler irrigation every 7-8 days; avoid waterlogging.',
+      nutrientRequirements: 'Foliar spray of 1% DAP + 0.5% Urea + 0.2% Borax for bold kernels.',
+      keyFarmingActivities: ['Monitor white grub damage', 'Control late Tikka & Rust with Mancozeb if needed'],
+      pestDiseaseRisks: ['White grub larvae chewing pods', 'Groundnut Rust pustules'],
+      imageUrl: '/crops/groundnut.jpg'
+    },
+    {
+      stageNumber: 6,
+      stageName: 'Maturity & Harvesting',
+      dayRange: 'Day 86 – 105',
+      startDay: 86,
+      endDay: 105,
+      description: 'Leaves yellow and shed; 75-80% of pods show hardened shells with dark reticulate inner veins and pink-reddish mature kernels.',
+      waterRequirements: 'Withhold irrigation 10 days before lifting for clean pod separation.',
+      nutrientRequirements: 'Nil.',
+      keyFarmingActivities: [
+        'Check inner pod shell darkening on 5 random plants',
+        'Lift plants cleanly and invert in field for 2-day sun curing',
+        'Strip pods and dry to <8% moisture to prevent aflatoxin'
+      ],
+      pestDiseaseRisks: ['Pre-harvest sprouting if unseasonal rain occurs', 'Aflatoxin in damp pods'],
+      imageUrl: '/crops/groundnut.jpg'
+    }
+  ],
+
+  // 5. TURMERIC TIMELINE
+  'Turmeric': [
+    {
+      stageNumber: 1,
+      stageName: 'Rhizome Planting & Sprouting',
+      dayRange: 'Day 1 – 30',
+      startDay: 1,
+      endDay: 30,
+      description: 'Disease-free mother/finger rhizome bits (30-40g with 2-3 buds) sprout slowly under warm moist ridges.',
+      waterRequirements: 'Irrigate immediately after planting and every 5-6 days.',
+      nutrientRequirements: 'Basal: 10 tons FYM + 100% P2O5 + 25% K2O + Azospirillum.',
+      keyFarmingActivities: ['Treat seed rhizomes with Carbendazim + Quinalphos', 'Mulch beds with green leaves (12 t/ha)'],
+      pestDiseaseRisks: ['Rhizome scale', 'Early rhizome rot in poorly drained pockets'],
+      imageUrl: '/crops/turmeric.jpg'
+    },
+    {
+      stageNumber: 2,
+      stageName: 'Vegetative Leaf Emergence',
+      dayRange: 'Day 31 – 90',
+      startDay: 31,
+      endDay: 90,
+      description: 'Broad lanceolate lush green leaves unfurl in pairs, forming a dense 1m tall pseudostem canopy.',
+      waterRequirements: 'Drip or furrow irrigation every 7 days.',
+      nutrientRequirements: 'Top dress 50% N + 25% K2O at 45 and 90 DAP.',
+      keyFarmingActivities: ['Hand weeding and second green leaf mulching at 60 DAP', 'Earthing up soil around base'],
+      pestDiseaseRisks: ['Shoot borer (Conogethes punctiferalis)', 'Leaf blotch (Taphrina)'],
+      imageUrl: '/crops/turmeric.jpg'
     },
     {
       stageNumber: 3,
-      stageName: 'Pod Filling & Maturity',
-      dayRange: 'Day 51 – 105',
-      startDay: 51,
+      stageName: 'Rhizome Initiation & Tillering',
+      dayRange: 'Day 91 – 150',
+      startDay: 91,
+      endDay: 150,
+      description: 'Underground mother rhizome produces lateral primary and secondary fingers. Curcuminoid pigment synthesis begins.',
+      waterRequirements: 'Maintain uniform soil moisture; avoid drought stress.',
+      nutrientRequirements: 'Apply remaining Nitrogen + Potash + Micronutrients (Zn, Fe, B) at 120 DAP.',
+      keyFarmingActivities: ['Final earthing up to cover exposed young rhizomes', 'Check for rhizome rot wilting'],
+      pestDiseaseRisks: ['Pythium rhizome rot', 'Leaf spot (Colletotrichum)'],
+      imageUrl: '/crops/turmeric.jpg'
+    },
+    {
+      stageNumber: 4,
+      stageName: 'Rhizome Bulking & Curing Maturity',
+      dayRange: 'Day 151 – 240',
+      startDay: 151,
+      endDay: 240,
+      description: 'Fingers plump with deep orange-yellow flesh and high curcumin (4.5-5.5%). Foliage turns golden-yellow and dries down.',
+      waterRequirements: 'Stop irrigation 20 days prior to digging.',
+      nutrientRequirements: 'Nil.',
+      keyFarmingActivities: ['Dig rhizomes carefully without bruising', 'Boil, sun-dry for 10-12 days, and polish'],
+      pestDiseaseRisks: ['Storage beetles if dried incompletely'],
+      imageUrl: '/crops/turmeric.jpg'
+    }
+  ],
+
+  // 6. FINGER MILLET (RAGI) TIMELINE
+  'Ragi': [
+    {
+      stageNumber: 1,
+      stageName: 'Seed & Germination',
+      dayRange: 'Day 1 – 10',
+      startDay: 1,
+      endDay: 10,
+      description: 'Tiny reddish-brown seeds germinate rapidly within 4 days; fibrous adventitious roots anchor seedling.',
+      waterRequirements: 'Light irrigation at sowing and Day 4 if dry.',
+      nutrientRequirements: 'Treat seeds with Azospirillum (600g/ha). Basal: 50% N + 100% P & K.',
+      keyFarmingActivities: ['Line sow or transplant 18-day nursery seedlings at 30x10 cm'],
+      pestDiseaseRisks: ['Bird picking', 'Seedling blight'],
+      imageUrl: '/crops/ragi.jpg'
+    },
+    {
+      stageNumber: 2,
+      stageName: 'Tillering & Vegetative Growth',
+      dayRange: 'Day 11 – 40',
+      startDay: 11,
+      endDay: 40,
+      description: 'Profuse basal tillers emerge (4-7 productive tillers per hill) with narrow, erect dark-green leaves.',
+      waterRequirements: 'Drought tolerant; irrigate once every 10-12 days if rain fails.',
+      nutrientRequirements: 'Top dress remaining 50% Nitrogen at 25-30 DAS.',
+      keyFarmingActivities: ['Intercultivation with hand hoe at 20 DAS', 'Thinning to maintain spacing'],
+      pestDiseaseRisks: ['Pink stem borer', 'Aphids on young shoots'],
+      imageUrl: '/crops/ragi.jpg'
+    },
+    {
+      stageNumber: 3,
+      stageName: 'Earhead Emergence & Flowering',
+      dayRange: 'Day 41 – 70',
+      startDay: 41,
+      endDay: 70,
+      description: 'Characteristic 5-7 curved finger-like spikes emerge from the boot leaf and undergo self-pollination.',
+      waterRequirements: 'CRITICAL STAGE: Ensure adequate soil moisture during flowering.',
+      nutrientRequirements: 'Foliar 1% Urea if crop shows pale stress.',
+      keyFarmingActivities: ['Scout for neck & finger blast lesions'],
+      pestDiseaseRisks: ['Finger & Neck Blast (Pyricularia grisea)', 'Earhead caterpillars'],
+      imageUrl: '/crops/ragi.jpg'
+    },
+    {
+      stageNumber: 4,
+      stageName: 'Grain Filling & Harvest',
+      dayRange: 'Day 71 – 100',
+      startDay: 71,
+      endDay: 100,
+      description: 'Spikelets fill with calcium-rich reddish-brown grains; fingers curve inward and turn golden-brown.',
+      waterRequirements: 'Stop irrigation 12 days before harvest.',
+      nutrientRequirements: 'Nil.',
+      keyFarmingActivities: ['Harvest mature earheads in 2 pickings', 'Sun dry, thresh, and winnow'],
+      pestDiseaseRisks: ['Bird damage on ripening earheads'],
+      imageUrl: '/crops/ragi.jpg'
+    }
+  ],
+
+  // 7. HYBRID MAIZE TIMELINE
+  'Maize': [
+    {
+      stageNumber: 1,
+      stageName: 'Emergence & V4 Seedling',
+      dayRange: 'Day 1 – 20',
+      startDay: 1,
+      endDay: 20,
+      description: 'Coleoptile emerges in 5 days; 4 true leaves unfold with deep seminal and nodal roots establishing.',
+      waterRequirements: 'Light irrigation immediately after sowing and at 10 DAS.',
+      nutrientRequirements: 'Basal: 25% N + 100% P2O5 + 50% K2O + 10 kg ZnSO4/acre.',
+      keyFarmingActivities: ['Ridge-and-furrow sowing (60x20 cm)', 'Pre-emergence Atrazine weed control'],
+      pestDiseaseRisks: ['Fall Armyworm (FAW) whorl feeding', 'Shoot fly'],
+      imageUrl: '/crops/maize.jpg'
+    },
+    {
+      stageNumber: 2,
+      stageName: 'Knee-High & Rapid Vegetative',
+      dayRange: 'Day 21 – 48',
+      startDay: 21,
+      endDay: 48,
+      description: 'Stalk elongates rapidly to 1.5m+. Ear shoot initials and tassel differentiate internally.',
+      waterRequirements: 'Irrigate every 7-8 days; sensitive to waterlogging.',
+      nutrientRequirements: 'Top dress 50% N at 25 DAS and remaining 25% N + 50% K2O at 45 DAS.',
+      keyFarmingActivities: ['Earthing up at 30 DAS', 'Monitor whorl for Fall Armyworm frass'],
+      pestDiseaseRisks: ['Fall Armyworm', 'Turcicum leaf blight'],
+      imageUrl: '/crops/maize.jpg'
+    },
+    {
+      stageNumber: 3,
+      stageName: 'Tasseling & Silking',
+      dayRange: 'Day 49 – 70',
+      startDay: 49,
+      endDay: 70,
+      description: 'Top tassel sheds golden pollen onto receptive green silks emerging from cob husks.',
+      waterRequirements: 'CRITICAL STAGE: Moisture stress causes poor pollination and missing kernels.',
+      nutrientRequirements: 'Foliar 1% KNO3 if needed.',
+      keyFarmingActivities: ['Ensure uninterrupted irrigation', 'Avoid foliar sprays during morning pollen shed'],
+      pestDiseaseRisks: ['Cob borer', 'Pollen-washing storms'],
+      imageUrl: '/crops/maize.jpg'
+    },
+    {
+      stageNumber: 4,
+      stageName: 'Grain Filling & Physiological Maturity',
+      dayRange: 'Day 71 – 105',
+      startDay: 71,
       endDay: 105,
-      description: 'Underground pegs swell into two-seeded pods. Kernels fill with oil and protein. Pod shell hardens and interior displays dark reticulate veins.',
-      waterRequirements: 'Moderate irrigation; avoid standing water which causes pod rot.',
-      nutrientRequirements: 'Foliar spray of 1% DAP + 0.5% Urea for kernel bold size.',
-      keyFarmingActivities: [
-        'Monitor pod inner shell pigmentation',
-        'Lift plants when 75-80% pods show mature dark inner lining',
-        'Invert plants in field for 2 days sun curing, then strip pods'
-      ],
-      pestDiseaseRisks: ['White grub larvae damaging pods', 'Rust fungus on leaves'],
-      imageUrl: 'https://images.unsplash.com/photo-1568283096533-078a24930eb8?w=800&auto=format&fit=crop&q=80'
+      description: 'Kernels pass through milky, dough, and dent stages; black layer forms at kernel base and husks dry.',
+      waterRequirements: 'Stop irrigation 15 days before harvest.',
+      nutrientRequirements: 'Nil.',
+      keyFarmingActivities: ['Harvest when husks turn straw-yellow', 'Shell cobs and dry grain to 12% moisture'],
+      pestDiseaseRisks: ['Stalk rot', 'Storage weevils'],
+      imageUrl: '/crops/maize.jpg'
+    }
+  ],
+
+  // 8. BT COTTON TIMELINE
+  'Cotton': [
+    {
+      stageNumber: 1,
+      stageName: 'Seedling & Establishment',
+      dayRange: 'Day 1 – 25',
+      startDay: 1,
+      endDay: 25,
+      description: 'Dicotyledonous seedlings emerge in 5-6 days; deep taproot anchors strongly into black/loam soil.',
+      waterRequirements: 'Light irrigation at sowing and 12 DAS.',
+      nutrientRequirements: 'Basal: 25% N + 100% P2O5 + 50% K2O.',
+      keyFarmingActivities: ['Dibbling at 90x60 cm', 'Gap filling & thinning at 15 DAS'],
+      pestDiseaseRisks: ['Thrips & Jassids (leafhoppers)', 'Damping off'],
+      imageUrl: '/crops/cotton.jpg'
+    },
+    {
+      stageNumber: 2,
+      stageName: 'Squaring & Branching',
+      dayRange: 'Day 26 – 55',
+      startDay: 26,
+      endDay: 55,
+      description: 'Sympodial fruiting branches develop and triangular green flower buds (squares) appear.',
+      waterRequirements: 'Moderate irrigation every 10-12 days.',
+      nutrientRequirements: 'Top dress 50% N at 35 DAS + Magnesium Sulphate spray if leaf reddening occurs.',
+      keyFarmingActivities: ['Intercultivation and earthing up', 'Install yellow sticky traps for whitefly'],
+      pestDiseaseRisks: ['Whitefly', 'Aphids', 'Square shedding'],
+      imageUrl: '/crops/cotton.jpg'
+    },
+    {
+      stageNumber: 3,
+      stageName: 'Flowering & Boll Formation',
+      dayRange: 'Day 56 – 110',
+      startDay: 56,
+      endDay: 110,
+      description: 'Creamy-white flowers turn pink after pollination and develop into green spherical cotton bolls.',
+      waterRequirements: 'CRITICAL STAGE: Maintain steady soil moisture; avoid stress.',
+      nutrientRequirements: 'Final 25% N + 50% K2O at 65 DAS + 2% DAP foliar spray.',
+      keyFarmingActivities: ['Nipping terminal bud at 85 DAS', 'Monitor pheromone traps for Pink Bollworm'],
+      pestDiseaseRisks: ['Pink Bollworm', 'American Bollworm', 'Grey mildew'],
+      imageUrl: '/crops/cotton.jpg'
+    },
+    {
+      stageNumber: 4,
+      stageName: 'Boll Opening & Picking',
+      dayRange: 'Day 111 – 160',
+      startDay: 111,
+      endDay: 160,
+      description: 'Mature bolls split open cleanly exposing bright white lint fibers ready for clean picking.',
+      waterRequirements: 'Stop irrigation once 50% bolls begin bursting.',
+      nutrientRequirements: 'Nil.',
+      keyFarmingActivities: ['Pick clean dry lint in 3-4 rounds during dry mornings', 'Store by grade away from moisture'],
+      pestDiseaseRisks: ['Cotton stainer bug', 'Unseasonal rain discoloring lint'],
+      imageUrl: '/crops/cotton.jpg'
     }
   ]
 };

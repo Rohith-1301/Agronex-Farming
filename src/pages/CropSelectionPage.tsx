@@ -7,6 +7,7 @@ import {
 } from '../data/cropSelectionData';
 import { RecommendedCrop, CropGrowthStageDetail } from '../types';
 import { getFieldCropImage } from '../utils/cropImages';
+import CropTimelineVisual from '../components/CropTimelineVisual';
 import {
   Sprout,
   Layers,
@@ -72,13 +73,15 @@ export default function CropSelectionPage() {
   // Available timeline crops
   const availableTimelineCrops = Object.keys(cropGrowthTimelines);
 
-  // Get active crop stages
-  const currentTimelineStages = useMemo(() => {
-    const key = availableTimelineCrops.find(k => 
-      selectedTimelineCropName.toLowerCase().includes(k.toLowerCase())
-    ) || 'Paddy';
-    return cropGrowthTimelines[key] || cropGrowthTimelines['Paddy'];
+  // Get active crop key & stages
+  const currentTimelineKey = useMemo(() => {
+    const c = selectedTimelineCropName.toLowerCase();
+    return availableTimelineCrops.find((k) => c.includes(k.toLowerCase())) || 'Paddy';
   }, [selectedTimelineCropName, availableTimelineCrops]);
+
+  const currentTimelineStages = useMemo(() => {
+    return cropGrowthTimelines[currentTimelineKey] || cropGrowthTimelines['Paddy'];
+  }, [currentTimelineKey]);
 
   // Max days in timeline
   const maxDays = useMemo(() => {
@@ -478,7 +481,7 @@ export default function CropSelectionPage() {
                       setSelectedStageIdx(0);
                     }}
                     className={`px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 ${
-                      selectedTimelineCropName.toLowerCase() === cropKey.toLowerCase()
+                      currentTimelineKey.toLowerCase() === cropKey.toLowerCase()
                         ? 'bg-emerald-600 text-white shadow-md'
                         : 'bg-white/5 hover:bg-white/10 text-gray-300 border border-white/5'
                     }`}
@@ -489,6 +492,17 @@ export default function CropSelectionPage() {
                 ))}
               </div>
             </div>
+
+            {/* Visual Seed-to-Harvest Crop-Specific Timeline Banner */}
+            <CropTimelineVisual
+              cropKey={currentTimelineKey}
+              stages={currentTimelineStages}
+              activeStageNumber={activeStage.stageNumber}
+              onSelectStage={(stage, idx) => {
+                setSelectedStageIdx(idx);
+                setCurrentDaySlider(stage.startDay);
+              }}
+            />
 
             {/* Interactive Timeline Range Slider */}
             <div className="bg-[#030e07] p-5 sm:p-6 rounded-2xl border border-emerald-900/60 space-y-4">
