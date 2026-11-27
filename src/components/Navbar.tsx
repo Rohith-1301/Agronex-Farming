@@ -111,17 +111,17 @@ export default function Navbar({
 
   const activeLangObj = languages.find((l) => l.code === currentLang) || languages[0];
 
-  // If on public HomePage, render the clean, white/translucent rounded floating navbar matching the reference
+  // If on public HomePage, render a crisp sticky light navbar ABOVE the hero (never overlapping the drone/farmer)
   if (currentTab === 'home') {
     return (
-      <header className="fixed top-0 left-0 right-0 z-50 pt-3 px-3 sm:px-6 lg:px-8 pointer-events-none">
-        <div className="max-w-7xl mx-auto rounded-full bg-white/85 backdrop-blur-xl border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.08)] px-4 sm:px-6 py-2 flex items-center justify-between pointer-events-auto">
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-emerald-200/80 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-3">
           {/* Left: Brand Logo & Tagline */}
           <div
             onClick={() => onSelectTab('home')}
             className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group shrink-0"
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-50 border border-emerald-500/30 flex items-center justify-center p-1 shadow-sm group-hover:scale-105 transition">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-50 border border-emerald-500/30 flex items-center justify-center p-1 shadow-xs group-hover:scale-105 transition">
               <img
                 src="/agronex-logo.jpg"
                 alt="AGRONEX Logo"
@@ -136,7 +136,9 @@ export default function Navbar({
                 <span className="text-lg sm:text-xl font-black text-gray-900 tracking-tight font-sans">
                   AGRONEX
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span className="text-[9px] font-black px-1.5 py-0.5 rounded-md bg-emerald-600 text-white uppercase tracking-wider">
+                  AI
+                </span>
               </div>
               <p className="text-[10px] text-gray-500 font-semibold tracking-wide hidden sm:block">
                 Smart Farming. Smarter Future.
@@ -144,56 +146,53 @@ export default function Navbar({
             </div>
           </div>
 
-          {/* Center: Clean Rounded Navigation Items */}
-          <nav className="hidden md:flex items-center gap-1.5 lg:gap-2">
+          {/* Center: Real Website Quick Navigation */}
+          <nav className="hidden lg:flex items-center gap-1">
             <button
               onClick={() => onSelectTab('home')}
-              className="px-4 py-1.5 rounded-full bg-emerald-600 text-white font-bold text-xs shadow-md shadow-emerald-700/20 transition"
+              className="px-3.5 py-1.5 rounded-full bg-emerald-600 text-white font-bold text-xs shadow-sm transition cursor-pointer"
             >
               Home
             </button>
-
             <button
               onClick={() => onSelectTab('dashboard')}
-              className="px-3.5 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50/80 font-bold text-xs transition"
+              className="px-3 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 font-bold text-xs transition cursor-pointer"
             >
-              Features
+              Dashboard
             </button>
-
             <button
-              onClick={() => {
-                alert('AGRONEX AI PRO is an intelligent precision agriculture ecosystem built for Indian farmers with ICAR & TNAU datasets, multi-field telemetry, and 20 government welfare schemes.');
-              }}
-              className="px-3.5 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50/80 font-bold text-xs transition"
+              onClick={() => onSelectTab('crop-doctor')}
+              className="px-3 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 font-bold text-xs transition cursor-pointer"
             >
-              About
+              Crop Doctor
             </button>
-
             <button
               onClick={() => onSelectTab('schemes')}
-              className="px-3.5 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50/80 font-bold text-xs transition"
+              className="px-3 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 font-bold text-xs transition cursor-pointer"
             >
-              Schemes
+              Schemes (20)
             </button>
-
             <button
-              onClick={() => {
-                window.open('tel:18001801551');
-              }}
-              className="px-3.5 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50/80 font-bold text-xs transition"
-              title="Kisan Call Centre Toll-Free Helpline: 1800-180-1551"
+              onClick={() => onSelectTab('spray-advisor')}
+              className="px-3 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 font-bold text-xs transition cursor-pointer"
             >
-              Support
+              Spray AI
+            </button>
+            <button
+              onClick={() => onSelectTab('intercrop-sim')}
+              className="px-3 py-1.5 rounded-full text-gray-700 hover:text-emerald-700 hover:bg-emerald-50 font-bold text-xs transition cursor-pointer"
+            >
+              Intercrop AI
             </button>
           </nav>
 
-          {/* Right: Language Selector & Login Button */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          {/* Right: Language Selector & Profile/Login Button */}
+          <div className="flex items-center gap-2 sm:gap-2.5">
             {/* Language Selector */}
             <div className="relative">
               <button
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200/80 text-gray-800 text-xs font-bold transition border border-gray-200/60 shadow-xs"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200/80 text-gray-800 text-xs font-bold transition border border-gray-200/70 cursor-pointer"
                 title="Select Language"
               >
                 <Globe className="w-3.5 h-3.5 text-emerald-600" />
@@ -224,10 +223,10 @@ export default function Navbar({
               )}
             </div>
 
-            {/* Login Button */}
+            {/* Login / Farmer Profile Button */}
             <button
               onClick={onOpenLoginModal}
-              className="px-5 py-2 rounded-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold text-xs shadow-md shadow-emerald-700/20 transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5"
+              className="px-4 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold text-xs shadow-sm transition flex items-center gap-1.5 cursor-pointer"
             >
               <User className="w-3.5 h-3.5" />
               <span>{isLoggedIn ? (profile.name.split(' ')[0] || 'Profile') : 'Login'}</span>
@@ -236,7 +235,7 @@ export default function Navbar({
             {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-full bg-gray-100 text-gray-700 hover:text-black"
+              className="lg:hidden p-2 rounded-full bg-gray-100 text-gray-700 hover:text-black"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -245,44 +244,22 @@ export default function Navbar({
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-2 mx-auto max-w-7xl bg-white/95 backdrop-blur-xl border border-gray-200 rounded-3xl p-4 shadow-xl space-y-2 animate-fadeIn text-gray-800 text-xs font-bold pointer-events-auto">
-            <button
-              onClick={() => {
-                onSelectTab('home');
-                setMobileMenuOpen(false);
-              }}
-              className="w-full text-left px-4 py-2.5 rounded-xl bg-emerald-600 text-white font-bold"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => {
-                onSelectTab('dashboard');
-                setMobileMenuOpen(false);
-              }}
-              className="w-full text-left px-4 py-2.5 rounded-xl hover:bg-emerald-50 text-gray-800"
-            >
-              Features & Farm Dashboard
-            </button>
-            <button
-              onClick={() => {
-                onSelectTab('schemes');
-                setMobileMenuOpen(false);
-              }}
-              className="w-full text-left px-4 py-2.5 rounded-xl hover:bg-emerald-50 text-gray-800"
-            >
-              Government Schemes (20)
-            </button>
-            <button
-              onClick={() => {
-                window.open('tel:18001801551');
-                setMobileMenuOpen(false);
-              }}
-              className="w-full text-left px-4 py-2.5 rounded-xl hover:bg-emerald-50 text-gray-800 flex items-center justify-between"
-            >
-              <span>Kisan Support Helpline</span>
-              <span className="text-emerald-600">1800-180-1551</span>
-            </button>
+          <div className="lg:hidden border-t border-gray-200 bg-white px-4 py-3 space-y-1.5 text-gray-800 text-xs font-bold">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => {
+                  onSelectTab(item.id);
+                  setMobileMenuOpen(false);
+                }}
+                className={`w-full text-left px-4 py-2 rounded-xl flex items-center justify-between ${
+                  item.id === 'home' ? 'bg-emerald-600 text-white' : 'hover:bg-emerald-50'
+                }`}
+              >
+                <span>{item.label}</span>
+                <ArrowRight className="w-3.5 h-3.5 opacity-60" />
+              </button>
+            ))}
           </div>
         )}
       </header>

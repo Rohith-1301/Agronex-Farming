@@ -1,11 +1,13 @@
 import React from 'react';
 import {
+  LayoutDashboard,
   Sprout,
   PlusCircle,
-  Droplets,
+  Bot,
   Landmark,
   TrendingUp,
-  Bot,
+  CloudRain,
+  Layers,
   ArrowRight
 } from 'lucide-react';
 
@@ -14,65 +16,78 @@ interface HomePageProps {
 }
 
 export default function HomePage({ onNavigate }: HomePageProps) {
-  const highlightFeatures = [
+  // All 8 live AGRONEX modules mapped cleanly to the bottom dock
+  const platformModules = [
+    {
+      id: 'dashboard',
+      name: 'Farm Dashboard',
+      icon: LayoutDashboard,
+      iconBg: 'bg-emerald-100 text-emerald-700'
+    },
     {
       id: 'crop-selection',
-      name: 'Smart Crop Selection',
+      name: 'Crop Selection',
       icon: Sprout,
-      iconBg: 'bg-emerald-100/90 text-emerald-600'
+      iconBg: 'bg-green-100 text-green-700'
     },
     {
       id: 'crop-doctor',
       name: 'AI Crop Doctor',
       icon: PlusCircle,
-      iconBg: 'bg-green-100/90 text-green-600'
-    },
-    {
-      id: 'dashboard',
-      name: 'Smart Irrigation',
-      icon: Droplets,
-      iconBg: 'bg-sky-100/90 text-sky-600'
-    },
-    {
-      id: 'schemes',
-      name: 'Government Schemes',
-      icon: Landmark,
-      iconBg: 'bg-amber-100/90 text-amber-700'
-    },
-    {
-      id: 'profit-calc',
-      name: 'Profit Calculator',
-      icon: TrendingUp,
-      iconBg: 'bg-lime-100/90 text-emerald-700'
+      iconBg: 'bg-teal-100 text-teal-700'
     },
     {
       id: 'agro-ai',
-      name: 'Multilingual AI Assistant',
+      name: 'AGRI AI Chat',
       icon: Bot,
-      iconBg: 'bg-cyan-100/90 text-cyan-700'
+      iconBg: 'bg-cyan-100 text-cyan-700'
+    },
+    {
+      id: 'schemes',
+      name: 'Govt Schemes',
+      icon: Landmark,
+      iconBg: 'bg-amber-100 text-amber-700'
+    },
+    {
+      id: 'profit-calc',
+      name: 'Profit & Loss',
+      icon: TrendingUp,
+      iconBg: 'bg-lime-100 text-emerald-700'
+    },
+    {
+      id: 'spray-advisor',
+      name: 'Spray & Irrigate',
+      icon: CloudRain,
+      iconBg: 'bg-sky-100 text-sky-700'
+    },
+    {
+      id: 'intercrop-sim',
+      name: 'Intercrop & Risk',
+      icon: Layers,
+      iconBg: 'bg-emerald-100 text-emerald-800'
     }
   ];
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-between overflow-x-hidden font-sans select-none bg-[#e8f8ee]">
+    <div className="relative min-h-[calc(100vh-64px)] flex flex-col justify-between overflow-x-hidden font-sans select-none bg-[#e8f8ee]">
       {/* =========================================================================
-          MAIN HERO SECTION (Realistic Agricultural Landscape + Clean HTML UI)
+          MAIN HERO SECTION (Center Realistic Image Preserved Unobstructed)
          ========================================================================= */}
-      <section className="relative flex-1 flex flex-col justify-between pt-24 sm:pt-28 lg:pt-32">
-        {/* Clean 2K Photorealistic Backdrop */}
+      <section className="relative flex-1 flex flex-col justify-between pt-6 sm:pt-10 lg:pt-12">
+        {/* Clean 2K Photorealistic Backdrop (aligned top so drone & turban are 100% visible) */}
         <div
-          className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-center"
+          className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-top"
           style={{
             backgroundImage: "url('/agronex-hero-backdrop-2k.jpg')"
           }}
         >
-          {/* Gentle left-side sunlight scrim for crisp text legibility without washing out crops */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/65 via-white/25 to-transparent w-full md:w-[58%]" />
+          {/* Gentle left readability scrim */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent w-full md:w-[56%]" />
         </div>
 
         {/* Hero Foreground Container */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-between">
-          {/* Upper Grid: Left Content + Right Visual Breathing Space */}
+          {/* Upper Grid: Left Content + Right Visual Space */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto py-4 sm:py-6">
             <div className="lg:col-span-7 xl:col-span-6 space-y-3 sm:space-y-4">
               {/* Small Heading + Green Accent Line */}
@@ -95,10 +110,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
               {/* Description */}
               <p className="text-sm sm:text-base text-gray-800 font-medium leading-relaxed max-w-lg pt-1">
-                Get AI-powered crop recommendations, disease detection, smart irrigation tips and government schemes — all in one place.
+                Get AI-powered crop recommendations, disease detection, spray timing, intercropping simulation, and government schemes — all in one place.
               </p>
 
-              {/* Primary CTA: ONLY Get Started Button */}
+              {/* Primary CTA: Get Started */}
               <div className="pt-3">
                 <button
                   onClick={() => onNavigate('dashboard')}
@@ -112,32 +127,32 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               </div>
             </div>
 
-            {/* Right Visual Space (Farmer & Drone in Background) */}
-            <div className="lg:col-span-5 xl:col-span-6 min-h-[160px] sm:min-h-[220px] lg:min-h-[300px]" />
+            {/* Right Visual Space (Drone & Farmer unobstructed) */}
+            <div className="lg:col-span-5 xl:col-span-6 min-h-[180px] sm:min-h-[240px] lg:min-h-[320px]" />
           </div>
 
           {/* =========================================================================
-              FEATURE HIGHLIGHT BAR (Translucent White Frosted Glass Bar)
+              UPDATED BOTTOM BAR (All 8 Real Modules of AGRONEX)
              ========================================================================= */}
-          <div className="w-full mt-6 sm:mt-10 mb-4 sm:mb-6">
-            <div className="rounded-2xl lg:rounded-full bg-white/85 backdrop-blur-xl border border-white/80 shadow-[0_12px_35px_-8px_rgba(0,0,0,0.16)] px-2 py-2 sm:px-3 sm:py-2.5">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 lg:divide-x divide-gray-200/70">
-                {highlightFeatures.map((feat) => {
-                  const Icon = feat.icon;
+          <div className="w-full mt-6 sm:mt-8 mb-4 sm:mb-6">
+            <div className="rounded-2xl xl:rounded-full bg-white/90 backdrop-blur-xl border border-white/85 shadow-[0_12px_35px_-8px_rgba(0,0,0,0.16)] p-2">
+              <div className="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-8 divide-y sm:divide-y-0 xl:divide-x divide-gray-200/70">
+                {platformModules.map((mod) => {
+                  const Icon = mod.icon;
                   return (
                     <button
-                      key={feat.id}
-                      onClick={() => onNavigate(feat.id)}
-                      className="px-3 py-2.5 hover:bg-emerald-50/75 rounded-xl lg:rounded-full transition flex items-center gap-2.5 text-left group cursor-pointer"
-                      title={`Open ${feat.name}`}
+                      key={mod.id}
+                      onClick={() => onNavigate(mod.id)}
+                      className="px-2.5 py-2 hover:bg-emerald-50/80 rounded-xl xl:rounded-full transition flex items-center gap-2 text-left group cursor-pointer"
+                      title={`Open ${mod.name}`}
                     >
                       <div
-                        className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition ${feat.iconBg}`}
+                        className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition ${mod.iconBg}`}
                       >
-                        <Icon className="w-4.5 h-4.5" />
+                        <Icon className="w-4 h-4" />
                       </div>
-                      <span className="text-xs font-bold text-gray-800 group-hover:text-emerald-700 transition leading-snug">
-                        {feat.name}
+                      <span className="text-[11px] font-bold text-gray-800 group-hover:text-emerald-700 transition leading-tight">
+                        {mod.name}
                       </span>
                     </button>
                   );
@@ -150,21 +165,21 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         {/* =========================================================================
             CLEAN CURVED LIGHT-GREEN LOWER WAVE TRANSITION
            ========================================================================= */}
-        <div className="relative z-10 w-full overflow-hidden leading-none mt-2">
+        <div className="relative z-10 w-full overflow-hidden leading-none mt-1">
           <svg
-            viewBox="0 0 1440 80"
+            viewBox="0 0 1440 70"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-10 sm:h-14 lg:h-16 block"
+            className="w-full h-8 sm:h-12 lg:h-14 block"
             preserveAspectRatio="none"
           >
             <path
-              d="M0,32 C320,76 580,6 920,42 C1190,70 1330,22 1440,30 L1440,80 L0,80 Z"
+              d="M0,28 C320,66 580,6 920,38 C1190,62 1330,18 1440,26 L1440,70 L0,70 Z"
               fill="#ecfdf5"
               opacity="0.92"
             />
             <path
-              d="M0,48 C380,84 720,24 1080,56 C1290,74 1390,42 1440,48 L1440,80 L0,80 Z"
+              d="M0,42 C380,74 720,20 1080,48 C1290,64 1390,36 1440,42 L1440,70 L0,70 Z"
               fill="#d1fae5"
               opacity="0.75"
             />
