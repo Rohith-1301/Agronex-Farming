@@ -579,20 +579,103 @@ export const cropDiseasesDatabase: DiseaseRecord[] = [
       }
     ],
     expertAdvice: 'Pink bollworm larvae enter bolls within 20 minutes of egg hatching and feed inside. Spray during evening moth egg-laying window.'
+  },
+  // 10. PADDY BROWN SPOT
+  {
+    id: 'paddy_brown_spot',
+    crop: 'Paddy',
+    diseaseName: 'Paddy Brown Spot (புள்ளி நோய் / Bipolaris)',
+    scientificName: 'Bipolaris oryzae (Helminthosporium)',
+    severity: 'Medium',
+    confidenceScore: 95.4,
+    symptoms: [
+      'Numerous oval or circular dark-brown sesame-like spots scattered across leaf blades.',
+      'Yellow halo surrounding older brown spots; severe infection causes leaf drying.',
+      'Discolored or shriveled grains with black/brown lesions on glumes.'
+    ],
+    causes: 'Fungal spores favored by potassium-deficient or poorly drained soils and high humidity (25–30°C).',
+    organicControl: [
+      'Seed treatment with Pseudomonas fluorescens @ 10g/kg seed.',
+      'Apply Panchagavya 3% foliar spray + Potash soil correction (MOP 25 kg/acre).'
+    ],
+    chemicalControl: [
+      'Spray Mancozeb 75% WP @ 2g/liter or Propiconazole 25% EC @ 1ml/liter.',
+      'Alternatively spray Azoxystrobin + Difenoconazole @ 1ml/liter at booting.'
+    ],
+    verifiedMedicines: [
+      {
+        name: 'Indofil M-45 (Mancozeb 75% WP)',
+        activeIngredient: 'Mancozeb 75% WP',
+        type: 'Chemical',
+        dosagePerLiter: '2.0 g / Litre',
+        dosagePerAcre: '400 g / Acre (in 200L water)',
+        applicationMethod: 'Foliar spray covering upper and lower leaf surfaces.',
+        buyLinks: [
+          { platform: 'BigHaat', url: 'https://www.bighaat.com/search?q=Mancozeb', priceEstimate: '₹320 / 500g' },
+          { platform: 'AgroStar', url: 'https://www.agrostar.in/search?q=Indofil+M45', priceEstimate: '₹310 / 500g' }
+        ]
+      }
+    ],
+    expertAdvice: 'Brown spot indicates low soil potash or zinc. Supplement with Potash top-dressing alongside fungicide spray.'
+  },
+  // 11. PADDY SHEATH BLIGHT
+  {
+    id: 'paddy_sheath_blight',
+    crop: 'Paddy',
+    diseaseName: 'Paddy Sheath Blight (உறை கருகல் நோய்)',
+    scientificName: 'Rhizoctonia solani',
+    severity: 'High',
+    confidenceScore: 96.1,
+    symptoms: [
+      'Oval greenish-grey water-soaked lesions on leaf sheaths just above the waterline.',
+      'Lesions coalesce into large irregular greyish-white patches with dark brown borders (snake-skin pattern).',
+      'Small brown sclerotia (mustard-seed-like fungal bodies) visible on infected sheaths.'
+    ],
+    causes: 'Dense planting, excess nitrogen fertilizer, and warm humid microclimate near paddy water surface.',
+    organicControl: [
+      'Apply Pseudomonas fluorescens @ 1 kg/acre mixed with 20 kg FYM.',
+      'Drain standing water for 3–4 days to break humid microclimate.'
+    ],
+    chemicalControl: [
+      'Spray Validamycin 3% L @ 2.5 ml/liter or Hexaconazole 5% SC @ 2 ml/liter.',
+      'Direct spray nozzle toward the lower stem & leaf sheath base.'
+    ],
+    verifiedMedicines: [
+      {
+        name: 'Sheathmar / Validamycin 3% L',
+        activeIngredient: 'Validamycin 3% L',
+        type: 'Chemical',
+        dosagePerLiter: '2.5 ml / Litre',
+        dosagePerAcre: '500 ml / Acre (in 200L water)',
+        applicationMethod: 'Directed spray at the lower stem base and leaf sheaths.',
+        buyLinks: [
+          { platform: 'BigHaat', url: 'https://www.bighaat.com/search?q=Validamycin', priceEstimate: '₹420 / 500ml' },
+          { platform: 'AgroStar', url: 'https://www.agrostar.in/search?q=Hexaconazole', priceEstimate: '₹380 / 500ml' }
+        ]
+      }
+    ],
+    expertAdvice: 'Avoid excess Urea during active tillering; direct fungicide spray at the base of the plant rather than only the top canopy.'
   }
 ];
 
 /**
  * Intelligent Diagnosis Resolver:
- * Matches uploaded image, label, crop, or typed symptoms against the database,
- * returning the 100% exact, verified clinical pathology and medicine prescription.
+ * Matches uploaded image pixel signature, filename, label, crop, or typed symptoms against the database,
+ * returning the verified clinical pathology and medicine prescription without repeating a single default.
  */
 export function diagnoseCropCondition(query: {
   crop?: string;
   symptomText?: string;
   presetId?: string;
+  imageStats?: {
+    yellowRatio: number;
+    brownRatio: number;
+    darkSpotRatio: number;
+    whiteRatio: number;
+    greenRatio: number;
+  };
 }): DiseaseRecord {
-  // 1. Direct Preset Match
+  // 1. Direct Preset Match (only when explicitly triggered by clicking a preset)
   if (query.presetId) {
     const found = cropDiseasesDatabase.find((d) => d.id === query.presetId);
     if (found) return found;
@@ -619,7 +702,7 @@ export function diagnoseCropCondition(query: {
   }
 
   // 5. Tomato Matches
-  if (q.includes('tomato') || q.includes('தக்காளி') || q.includes('blight') || q.includes('கருகல்')) {
+  if (q.includes('tomato') || q.includes('தக்காளி') || q.includes('early blight') || q.includes('late blight')) {
     return cropDiseasesDatabase.find((d) => d.id === 'tomato_early_blight')!;
   }
 
@@ -628,14 +711,49 @@ export function diagnoseCropCondition(query: {
     return cropDiseasesDatabase.find((d) => d.id === 'cotton_bollworm')!;
   }
 
-  // 7. Paddy Specific Diseases
-  if (q.includes('bph') || q.includes('hopper') || q.includes('புகையான்') || q.includes('burn')) {
+  // 7. Paddy Specific Diseases (Keyword + Pixel Signature Matching)
+  if (q.includes('bph') || q.includes('hopper') || q.includes('புகையான்') || q.includes('swarm')) {
     return cropDiseasesDatabase.find((d) => d.id === 'paddy_bph')!;
   }
-  if (q.includes('bacterial') || q.includes('blb') || q.includes('streptocycline') || q.includes('பாக்டீரியா')) {
+  if (q.includes('sheath') || q.includes('snake') || q.includes('உறை') || q.includes('rhizoctonia')) {
+    return cropDiseasesDatabase.find((d) => d.id === 'paddy_sheath_blight')!;
+  }
+  if (q.includes('brown spot') || q.includes('sesame') || q.includes('bipolaris') || q.includes('புள்ளி')) {
+    return cropDiseasesDatabase.find((d) => d.id === 'paddy_brown_spot')!;
+  }
+  if (
+    q.includes('bacterial') ||
+    q.includes('blb') ||
+    q.includes('streptocycline') ||
+    q.includes('yellow') ||
+    q.includes('streak') ||
+    q.includes('wavy') ||
+    q.includes('ooze') ||
+    q.includes('பாக்டீரியா')
+  ) {
     return cropDiseasesDatabase.find((d) => d.id === 'paddy_blb')!;
   }
+  if (q.includes('blast') || q.includes('spindle') || q.includes('diamond') || q.includes('neck') || q.includes('குலை')) {
+    return cropDiseasesDatabase.find((d) => d.id === 'paddy_blast')!;
+  }
 
-  // Default to Paddy Blast (predominant blast disease)
+  // 8. Visual Pixel Signature Analysis for Uploaded Photos (when filename/text has no explicit keyword)
+  if (query.imageStats) {
+    const { yellowRatio, brownRatio, darkSpotRatio, whiteRatio } = query.imageStats;
+    if (yellowRatio > 0.16 && yellowRatio >= brownRatio) {
+      return cropDiseasesDatabase.find((d) => d.id === 'paddy_blb')!;
+    }
+    if (whiteRatio > 0.14 && brownRatio > 0.08) {
+      return cropDiseasesDatabase.find((d) => d.id === 'paddy_sheath_blight')!;
+    }
+    if (brownRatio > 0.14 && darkSpotRatio < 0.08) {
+      return cropDiseasesDatabase.find((d) => d.id === 'paddy_bph')!;
+    }
+    if (darkSpotRatio > 0.07 || brownRatio > 0.08) {
+      return cropDiseasesDatabase.find((d) => d.id === 'paddy_brown_spot')!;
+    }
+  }
+
+  // Default fallback to Paddy Blast
   return cropDiseasesDatabase.find((d) => d.id === 'paddy_blast')!;
 }

@@ -102,6 +102,20 @@ export default function CropDoctorPage() {
       description: 'Circular hopper-burn patches with hoppers swarming at stem base.'
     },
     {
+      id: 'paddy_blb',
+      label: 'Paddy BLB (பாக்டீரியா கருகல்)',
+      crop: 'Paddy',
+      imageUrl: '/paddy-golden-panicle.jpg',
+      description: 'Yellow wavy water-soaked streaks along leaf margins drying inward.'
+    },
+    {
+      id: 'paddy_brown_spot',
+      label: 'Paddy Brown Spot (புள்ளி நோய்)',
+      crop: 'Paddy',
+      imageUrl: '/paddy-macro.jpg',
+      description: 'Numerous oval dark-brown sesame-like spots with yellow halos.'
+    },
+    {
       id: 'tomato_early_blight',
       label: 'Tomato Blight (இலைக்கருகல்)',
       crop: 'Tomato',
@@ -136,28 +150,88 @@ export default function CropDoctorPage() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // Analyze uploaded leaf photo RGB/pixel signature via offscreen canvas
+  const extractImageStats = (dataUrl: string): Promise<{
+    yellowRatio: number;
+    brownRatio: number;
+    darkSpotRatio: number;
+    whiteRatio: number;
+    greenRatio: number;
+  } | undefined> => {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => {
+        try {
+          const canvas = document.createElement('canvas');
+          canvas.width = 96;
+          canvas.height = 96;
+          const ctx = canvas.getContext('2d');
+          if (!ctx) return resolve(undefined);
+          ctx.drawImage(img, 0, 0, 96, 96);
+          const pixels = ctx.getImageData(0, 0, 96, 96).data;
+          let yellow = 0, brown = 0, dark = 0, white = 0, green = 0;
+          const total = pixels.length / 4;
+          for (let i = 0; i < pixels.length; i += 4) {
+            const r = pixels[i], g = pixels[i + 1], b = pixels[i + 2];
+            if (r > 200 && g > 200 && b > 195) white++;
+            else if (r < 65 && g < 65 && b < 65) dark++;
+            else if (r > 155 && g > 135 && b < 95 && r - b > 60) yellow++;
+            else if (r > 100 && g > 55 && g < 130 && b < 75 && r > g) brown++;
+            else if (g > r && g > b) green++;
+          }
+          resolve({
+            yellowRatio: yellow / total,
+            brownRatio: brown / total,
+            darkSpotRatio: dark / total,
+            whiteRatio: white / total,
+            greenRatio: green / total
+          });
+        } catch {
+          resolve(undefined);
+        }
+      };
+      img.onerror = () => resolve(undefined);
+      img.src = dataUrl;
+    });
+  };
+
   // Handle Image Upload
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      setSelectedPresetId('');
       const reader = new FileReader();
-      reader.onload = () => {
-        setSelectedImage(reader.result as string);
-        runInference(undefined, currentField.currentCrop, file.name);
+      reader.onload = async () => {
+        const dataUrl = reader.result as string;
+        setSelectedImage(dataUrl);
+        const stats = await extractImageStats(dataUrl);
+        runInference(undefined, currentField.currentCrop, `${file.name} ${symptomDescription}`, stats);
       };
       reader.readAsDataURL(file);
     }
   };
 
-  // Run AI Inference Simulation with Exact Matching
-  const runInference = (presetId?: string, customCrop?: string, customSymptom?: string) => {
+  // Run AI Inference Simulation with Exact Matching (no stale preset override)
+  const runInference = (
+    presetId?: string,
+    customCrop?: string,
+    customSymptom?: string,
+    imageStats?: {
+      yellowRatio: number;
+      brownRatio: number;
+      darkSpotRatio: number;
+      whiteRatio: number;
+      greenRatio: number;
+    }
+  ) => {
     setIsAnalyzing(true);
 
     setTimeout(() => {
       const diagRecord = diagnoseCropCondition({
-        presetId: presetId || selectedPresetId,
+        presetId,
         crop: customCrop || currentField.currentCrop,
-        symptomText: customSymptom || symptomDescription
+        symptomText: customSymptom || symptomDescription,
+        imageStats
       });
 
       setDiagnosis(diagRecord);
