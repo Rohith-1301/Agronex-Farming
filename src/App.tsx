@@ -12,6 +12,8 @@ import CropDoctorPage from './pages/CropDoctorPage';
 import AgroAIAssistantPage from './pages/AgroAIAssistantPage';
 import GovernmentSchemesPage from './pages/GovernmentSchemesPage';
 import ProfitCalculatorPage from './pages/ProfitCalculatorPage';
+import SprayDecisionPage from './pages/SprayDecisionPage';
+import IntercropSimulatorPage from './pages/IntercropSimulatorPage';
 
 // Auxiliary Pages
 import WeatherPage from './pages/WeatherPage';
@@ -66,6 +68,8 @@ export default function App() {
           {currentTab === 'agro-ai' && <AgroAIAssistantPage />}
           {currentTab === 'schemes' && <GovernmentSchemesPage />}
           {currentTab === 'profit-calc' && <ProfitCalculatorPage />}
+          {currentTab === 'spray-advisor' && <SprayDecisionPage />}
+          {currentTab === 'intercrop-sim' && <IntercropSimulatorPage />}
 
           {/* Auxiliary fallbacks */}
           {currentTab === 'weather' && <WeatherPage />}

@@ -88,6 +88,16 @@ export default function Navbar({
       id: 'profit-calc',
       label: currentLang === 'ta' ? 'லாபக் கணிப்பான்' : currentLang === 'hi' ? 'लाभ और हानि कैलकुलेटर' : 'Profit & Loss',
       moduleNum: '6'
+    },
+    {
+      id: 'spray-advisor',
+      label: currentLang === 'ta' ? 'தெளிப்பு ஆலோசகர்' : currentLang === 'hi' ? 'स्प्रे और सिंचाई AI' : 'Spray & Irrigate',
+      moduleNum: '7'
+    },
+    {
+      id: 'intercrop-sim',
+      label: currentLang === 'ta' ? 'ஊடுபயிர் & ஆபத்து' : currentLang === 'hi' ? 'अंतरफसल व जोखिम AI' : 'Intercrop & Risk',
+      moduleNum: '8'
     }
   ];
 
@@ -322,7 +332,7 @@ export default function Navbar({
                 <button
                   key={item.id}
                   onClick={() => onSelectTab(item.id)}
-                  className={`relative px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 whitespace-nowrap ${
+                  className={`relative px-2.5 py-1.5 rounded-xl text-[11px] font-bold transition flex items-center gap-1 whitespace-nowrap ${
                     isActive
                       ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-900/60 font-black'
                       : 'text-gray-300 hover:text-white hover:bg-white/5'
