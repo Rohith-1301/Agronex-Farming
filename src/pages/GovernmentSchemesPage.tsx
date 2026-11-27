@@ -336,39 +336,39 @@ export default function GovernmentSchemesPage() {
           1. TOP AGRICULTURAL HERO BANNER (Matches Uploaded Reference Design)
          ========================================================================= */}
       <section className="relative overflow-hidden border-b border-emerald-200/70">
-        {/* Bright Farmland Sky & Farmer Backdrop */}
+        {/* Bright Farmland Sky, Farmer & Tractor Backdrop */}
         <div
-          className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-[center_top]"
-          style={{ backgroundImage: "url('/agronex-hero-backdrop-2k.jpg')" }}
+          className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-center"
+          style={{ backgroundImage: "url('/schemes-hero-bg.jpg')" }}
         >
           {/* Bright crisp left readability gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f4fbf6]/95 via-[#f4fbf6]/80 to-transparent md:w-[70%]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f4fbf6]/92 via-[#f4fbf6]/65 to-transparent md:w-[58%]" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20 sm:pb-24">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16 sm:pb-20">
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4">
             {/* Left Title & Module Badge */}
-            <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-emerald-800 to-green-700 text-white text-[11px] font-bold tracking-wider uppercase shadow-md">
+            <div className="space-y-2.5 max-w-xl">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-emerald-800 to-green-700 text-white text-[10px] sm:text-[11px] font-bold tracking-wider uppercase shadow-md">
                 <Sprout className="w-3.5 h-3.5 text-emerald-300" />
                 <span>Module 5 • Government Agriculture Schemes & Insurance</span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-gray-900 leading-tight">
+              <h1 className="text-2xl sm:text-3xl lg:text-[2.2rem] font-black tracking-tight text-gray-900 leading-tight whitespace-nowrap">
                 Government{' '}
                 <span className="text-emerald-700">Agriculture Schemes</span>
               </h1>
 
-              <p className="text-sm sm:text-base text-gray-700 font-medium leading-relaxed max-w-xl">
-                Verified central and state agricultural subsidies, direct income support, crop insurance, and machinery grants with AI eligibility matching & auto-filled applications.
+              <p className="text-xs sm:text-sm text-gray-700 font-medium leading-relaxed max-w-md">
+                Verified central and state agricultural subsidies, direct income support, crop insurance, and machinery grants with AI eligibility matching.
               </p>
             </div>
 
-            {/* Right Tab Switcher: All 20 Schemes | AI Apply Tab | My Applications */}
-            <div className="flex flex-wrap items-center gap-2 bg-white/90 backdrop-blur-xl border border-emerald-200 p-1.5 rounded-full shadow-lg self-start lg:self-auto">
+            {/* Right Tab Switcher: Tucked cleanly in top-right sky above tractor */}
+            <div className="flex flex-wrap items-center gap-1.5 bg-white/95 backdrop-blur-xl border border-emerald-200 p-1 rounded-full shadow-lg self-start mt-1">
               <button
                 onClick={() => setActiveTab('schemes')}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-full text-[11px] font-bold transition flex items-center gap-1.5 cursor-pointer ${
                   activeTab === 'schemes'
                     ? 'bg-emerald-700 text-white shadow-md'
                     : 'text-gray-700 hover:bg-emerald-50'
@@ -380,19 +380,19 @@ export default function GovernmentSchemesPage() {
 
               <button
                 onClick={() => setActiveTab('apply')}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-full text-[11px] font-bold transition flex items-center gap-1.5 cursor-pointer ${
                   activeTab === 'apply'
                     ? 'bg-emerald-700 text-white shadow-md'
                     : 'text-gray-700 hover:bg-emerald-50'
                 }`}
               >
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>AI Apply ({applyScheme.shortName})</span>
+                <span>AI Apply</span>
               </button>
 
               <button
                 onClick={() => setActiveTab('my-applications')}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-full text-[11px] font-bold transition flex items-center gap-1.5 cursor-pointer ${
                   activeTab === 'my-applications'
                     ? 'bg-emerald-700 text-white shadow-md'
                     : 'text-gray-700 hover:bg-emerald-50'
