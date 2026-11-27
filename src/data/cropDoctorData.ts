@@ -583,33 +583,39 @@ export const cropDiseasesDatabase: DiseaseRecord[] = [
   // 10. PADDY BROWN SPOT
   {
     id: 'paddy_brown_spot',
-    crop: 'Paddy',
+    cropCategory: 'Paddy',
     diseaseName: 'Paddy Brown Spot (புள்ளி நோய் / Bipolaris)',
+    tamilName: 'நெல் புள்ளி நோய்',
     scientificName: 'Bipolaris oryzae (Helminthosporium)',
-    severity: 'Medium',
-    confidenceScore: 95.4,
+    severity: 'Moderate',
+    confidence: 95.4,
+    sampleImages: ['/paddy-macro.jpg'],
+    possibleCauses: ['Potassium deficiency in soil', 'Prolonged high humidity (25–30°C)', 'Infected seed stock'],
     symptoms: [
       'Numerous oval or circular dark-brown sesame-like spots scattered across leaf blades.',
       'Yellow halo surrounding older brown spots; severe infection causes leaf drying.',
       'Discolored or shriveled grains with black/brown lesions on glumes.'
     ],
-    causes: 'Fungal spores favored by potassium-deficient or poorly drained soils and high humidity (25–30°C).',
-    organicControl: [
-      'Seed treatment with Pseudomonas fluorescens @ 10g/kg seed.',
-      'Apply Panchagavya 3% foliar spray + Potash soil correction (MOP 25 kg/acre).'
-    ],
-    chemicalControl: [
-      'Spray Mancozeb 75% WP @ 2g/liter or Propiconazole 25% EC @ 1ml/liter.',
-      'Alternatively spray Azoxystrobin + Difenoconazole @ 1ml/liter at booting.'
+    recommendedTreatments: {
+      organic: [
+        'Seed treatment with Pseudomonas fluorescens @ 10g/kg seed.',
+        'Apply Panchagavya 3% foliar spray + Potash soil correction (MOP 25 kg/acre).'
+      ],
+      chemical: [
+        'Spray Mancozeb 75% WP @ 2g/liter or Propiconazole 25% EC @ 1ml/liter.',
+        'Alternatively spray Azoxystrobin + Difenoconazole @ 1ml/liter at booting.'
+      ]
+    },
+    preventiveMeasures: [
+      'Ensure balanced Potash (MOP) and Zinc Sulphate basal application.',
+      'Use certified disease-free seeds treated with Pseudomonas fluorescens.'
     ],
     verifiedMedicines: [
       {
         name: 'Indofil M-45 (Mancozeb 75% WP)',
         activeIngredient: 'Mancozeb 75% WP',
-        type: 'Chemical',
-        dosagePerLiter: '2.0 g / Litre',
-        dosagePerAcre: '400 g / Acre (in 200L water)',
-        applicationMethod: 'Foliar spray covering upper and lower leaf surfaces.',
+        dosage: '2.0 g / Litre (400 g / Acre in 200L water)',
+        safetyPrecautions: 'Foliar spray covering upper and lower leaf surfaces; wear gloves and mask.',
         buyLinks: [
           { platform: 'BigHaat', url: 'https://www.bighaat.com/search?q=Mancozeb', priceEstimate: '₹320 / 500g' },
           { platform: 'AgroStar', url: 'https://www.agrostar.in/search?q=Indofil+M45', priceEstimate: '₹310 / 500g' }
@@ -621,33 +627,39 @@ export const cropDiseasesDatabase: DiseaseRecord[] = [
   // 11. PADDY SHEATH BLIGHT
   {
     id: 'paddy_sheath_blight',
-    crop: 'Paddy',
+    cropCategory: 'Paddy',
     diseaseName: 'Paddy Sheath Blight (உறை கருகல் நோய்)',
+    tamilName: 'நெல் உறை கருகல் நோய்',
     scientificName: 'Rhizoctonia solani',
-    severity: 'High',
-    confidenceScore: 96.1,
+    severity: 'Severe',
+    confidence: 96.1,
+    sampleImages: ['/crops/paddy.jpg'],
+    possibleCauses: ['Excess Urea / Nitrogen application', 'Dense canopy & stagnant water microclimate'],
     symptoms: [
       'Oval greenish-grey water-soaked lesions on leaf sheaths just above the waterline.',
       'Lesions coalesce into large irregular greyish-white patches with dark brown borders (snake-skin pattern).',
       'Small brown sclerotia (mustard-seed-like fungal bodies) visible on infected sheaths.'
     ],
-    causes: 'Dense planting, excess nitrogen fertilizer, and warm humid microclimate near paddy water surface.',
-    organicControl: [
-      'Apply Pseudomonas fluorescens @ 1 kg/acre mixed with 20 kg FYM.',
-      'Drain standing water for 3–4 days to break humid microclimate.'
-    ],
-    chemicalControl: [
-      'Spray Validamycin 3% L @ 2.5 ml/liter or Hexaconazole 5% SC @ 2 ml/liter.',
-      'Direct spray nozzle toward the lower stem & leaf sheath base.'
+    recommendedTreatments: {
+      organic: [
+        'Apply Pseudomonas fluorescens @ 1 kg/acre mixed with 20 kg FYM.',
+        'Drain standing water for 3–4 days to break humid microclimate.'
+      ],
+      chemical: [
+        'Spray Validamycin 3% L @ 2.5 ml/liter or Hexaconazole 5% SC @ 2 ml/liter.',
+        'Direct spray nozzle toward the lower stem & leaf sheath base.'
+      ]
+    },
+    preventiveMeasures: [
+      'Avoid excessive Nitrogen (Urea) top-dressing during active tillering.',
+      'Keep bunds weed-free and maintain recommended SRI spacing.'
     ],
     verifiedMedicines: [
       {
         name: 'Sheathmar / Validamycin 3% L',
         activeIngredient: 'Validamycin 3% L',
-        type: 'Chemical',
-        dosagePerLiter: '2.5 ml / Litre',
-        dosagePerAcre: '500 ml / Acre (in 200L water)',
-        applicationMethod: 'Directed spray at the lower stem base and leaf sheaths.',
+        dosage: '2.5 ml / Litre (500 ml / Acre in 200L water)',
+        safetyPrecautions: 'Directed spray at lower stem base and leaf sheaths; avoid spraying before rain.',
         buyLinks: [
           { platform: 'BigHaat', url: 'https://www.bighaat.com/search?q=Validamycin', priceEstimate: '₹420 / 500ml' },
           { platform: 'AgroStar', url: 'https://www.agrostar.in/search?q=Hexaconazole', priceEstimate: '₹380 / 500ml' }

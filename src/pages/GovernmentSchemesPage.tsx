@@ -1121,7 +1121,7 @@ export default function GovernmentSchemesPage() {
               </div>
             </div>
 
-            <p className="text-sm text-gray-700 leading-relaxed">{detailsModalScheme.fullDescription}</p>
+            <p className="text-sm text-gray-700 leading-relaxed">{detailsModalScheme.purpose}</p>
 
             <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
               <div className="text-xs font-bold text-emerald-700 uppercase">Verified Financial Benefit</div>
